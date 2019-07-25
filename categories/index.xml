@@ -22,47 +22,20 @@
     </item>
     
     <item>
-      <title>index</title>
-      <link>https://ifrenzyc.github.io/categories/index/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      <title>CI &amp; CD</title>
+      <link>https://ifrenzyc.github.io/categories/ci-cd/</link>
+      <pubDate>Wed, 17 Apr 2019 18:19:43 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/categories/index/</guid>
+      <guid>https://ifrenzyc.github.io/categories/ci-cd/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>shortcodes</title>
-      <link>https://ifrenzyc.github.io/categories/shortcodes/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      <title>数据库</title>
+      <link>https://ifrenzyc.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Fri, 17 Nov 2017 20:19:34 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/categories/shortcodes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docs</title>
-      <link>https://ifrenzyc.github.io/categories/docs/</link>
-      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/categories/docs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>https://ifrenzyc.github.io/categories/english/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/categories/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>https://ifrenzyc.github.io/categories/test/</link>
-      <pubDate>Wed, 30 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/categories/test/</guid>
+      <guid>https://ifrenzyc.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description></description>
     </item>
     
@@ -76,29 +49,11 @@
     </item>
     
     <item>
-      <title>Development</title>
-      <link>https://ifrenzyc.github.io/categories/development/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>hexo</title>
+      <link>https://ifrenzyc.github.io/categories/hexo/</link>
+      <pubDate>Sun, 04 Jun 2017 08:36:32 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://ifrenzyc.github.io/categories/golang/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/categories/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Syntax Highlighting</title>
-      <link>https://ifrenzyc.github.io/categories/syntax-highlighting/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/categories/syntax-highlighting/</guid>
+      <guid>https://ifrenzyc.github.io/categories/hexo/</guid>
       <description></description>
     </item>
     

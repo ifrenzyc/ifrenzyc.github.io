@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hexo on ITSYC</title>
+    <link>https://ifrenzyc.github.io/categories/hexo/</link>
+    <description>Recent content in hexo on ITSYC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; Copyright 2017 Yang Chuang</copyright>
+    <lastBuildDate>Sun, 04 Jun 2017 08:36:32 +0800</lastBuildDate>
+    
+	<atom:link href="https://ifrenzyc.github.io/categories/hexo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Hexo &#43; Orgmode 构建博客</title>
+      <link>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hexo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sun, 04 Jun 2017 08:36:32 +0800</pubDate>
+      
+      <guid>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hexo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>使用 Hexo 搭建一个个人博客的过程非常简单，参考官方文档即可：GitHub。 基本设置 使用 orgmode 来编辑文档 感谢 CodeFalling 插件：CodeFalling/hexo-</description>
+    </item>
+    
+  </channel>
+</rss>

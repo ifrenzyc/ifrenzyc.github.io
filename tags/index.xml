@@ -22,92 +22,47 @@
     </item>
     
     <item>
-      <title>preview</title>
-      <link>https://ifrenzyc.github.io/tags/preview/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      <title>概念</title>
+      <link>https://ifrenzyc.github.io/tags/%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Wed, 17 Apr 2019 18:19:43 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/tags/preview/</guid>
+      <guid>https://ifrenzyc.github.io/tags/%E6%A6%82%E5%BF%B5/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>shortcodes</title>
-      <link>https://ifrenzyc.github.io/tags/shortcodes/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      <title>灰度发布</title>
+      <link>https://ifrenzyc.github.io/tags/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83/</link>
+      <pubDate>Wed, 17 Apr 2019 18:19:43 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/tags/shortcodes/</guid>
+      <guid>https://ifrenzyc.github.io/tags/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>tag-6</title>
-      <link>https://ifrenzyc.github.io/tags/tag-6/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      <title>mariadb</title>
+      <link>https://ifrenzyc.github.io/tags/mariadb/</link>
+      <pubDate>Fri, 17 Nov 2017 20:19:34 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/tags/tag-6/</guid>
+      <guid>https://ifrenzyc.github.io/tags/mariadb/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>image</title>
-      <link>https://ifrenzyc.github.io/tags/image/</link>
-      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
+      <title>mysql</title>
+      <link>https://ifrenzyc.github.io/tags/mysql/</link>
+      <pubDate>Fri, 17 Nov 2017 15:49:34 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/tags/image/</guid>
+      <guid>https://ifrenzyc.github.io/tags/mysql/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>tag-7</title>
-      <link>https://ifrenzyc.github.io/tags/tag-7/</link>
-      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
+      <title>java</title>
+      <link>https://ifrenzyc.github.io/tags/java/</link>
+      <pubDate>Thu, 16 Nov 2017 17:39:34 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/tags/tag-7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>footnote</title>
-      <link>https://ifrenzyc.github.io/tags/footnote/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/footnote/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>markdown</title>
-      <link>https://ifrenzyc.github.io/tags/markdown/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag-11</title>
-      <link>https://ifrenzyc.github.io/tags/tag-11/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/tag-11/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>https://ifrenzyc.github.io/tags/english/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag-2</title>
-      <link>https://ifrenzyc.github.io/tags/tag-2/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/tag-2/</guid>
+      <guid>https://ifrenzyc.github.io/tags/java/</guid>
       <description></description>
     </item>
     
@@ -148,83 +103,11 @@
     </item>
     
     <item>
-      <title>development</title>
-      <link>https://ifrenzyc.github.io/tags/development/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>hexo</title>
+      <link>https://ifrenzyc.github.io/tags/hexo/</link>
+      <pubDate>Sun, 04 Jun 2017 08:36:32 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>https://ifrenzyc.github.io/tags/go/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://ifrenzyc.github.io/tags/golang/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>templates</title>
-      <link>https://ifrenzyc.github.io/tags/templates/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/templates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>themes</title>
-      <link>https://ifrenzyc.github.io/tags/themes/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/themes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://ifrenzyc.github.io/tags/hugo/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jekyll</title>
-      <link>https://ifrenzyc.github.io/tags/jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/jekyll/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Syntax Highlighting</title>
-      <link>https://ifrenzyc.github.io/tags/syntax-highlighting/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/syntax-highlighting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag-5</title>
-      <link>https://ifrenzyc.github.io/tags/tag-5/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/tags/tag-5/</guid>
+      <guid>https://ifrenzyc.github.io/tags/hexo/</guid>
       <description></description>
     </item>
     
