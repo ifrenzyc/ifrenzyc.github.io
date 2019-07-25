@@ -158,10 +158,10 @@
 <p>brew 里面已经有这个包了，直接用 brew 安装即可。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  $ brew install hugo</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ brew install hugo</code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="生成博客">生成博客</h2>
@@ -169,10 +169,10 @@
 <p>完成安装后，第一步是生成博客目录。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  $ hugo new site /path/to/site</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ hugo new site /path/to/site</code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -190,10 +190,10 @@
 <p>通过 hugo 命令可创建出我们的博客内容文件。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  $ hugo new post/helloworld.md</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ hugo new post/helloworld.md</code></pre></td></tr></table>
 </div>
 </div>
 <p>创建第一篇文章，放到 post 目录。</p>
@@ -203,14 +203,16 @@
 <p>在博客根目录执行 Hugo 命令启动 web 服务：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  $ hugo server --theme<span class="o">=</span>hyde --buildDrafts</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ hugo server --theme<span class="o">=</span>hyde --buildDrafts</code></pre></td></tr></table>
 </div>
 </div>
-<p>> --theme 指定主题
-> --buildDrafts  指定加载 <code>draft=true</code> 的文章</p>
+<ul>
+<li><code>--theme</code> 指定主题</li>
+<li><code>--buildDrafts</code>  指定加载 <code>draft=true</code> 的文章</li>
+</ul>
 
 <p>启动后，即可访问：http://127.0.0.1:1313</p>
 
@@ -224,12 +226,12 @@ https://github.com/masasam/emacs-easy-hugo/issues/27</p>
 <h2 id="安装-1">安装</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  $ <span class="nb">cd</span> themes
-  $ git clone https://github.com/spf13/hyde.git</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">cd</span> themes
+$ git clone https://github.com/spf13/hyde.git</code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="指定-theme-运行">指定 theme 运行</h2>
