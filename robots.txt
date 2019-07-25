@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://ifrenzyc.github.io/sitemap.xml

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zabbix on ITSYC</title>
+    <link>https://ifrenzyc.github.io/tags/zabbix/</link>
+    <description>Recent content in zabbix on ITSYC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; Copyright 2017 Yang Chuang</copyright>
+    <lastBuildDate>Tue, 27 Jun 2017 10:12:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://ifrenzyc.github.io/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>通过 Zabbix 实现 Logstash 的监控</title>
+      <link>https://ifrenzyc.github.io/post/%E9%80%9A%E8%BF%87-zabbix-%E5%AE%9E%E7%8E%B0-logstash-%E7%9A%84%E7%9B%91%E6%8E%A7/</link>
+      <pubDate>Tue, 27 Jun 2017 10:12:34 +0800</pubDate>
+      
+      <guid>https://ifrenzyc.github.io/post/%E9%80%9A%E8%BF%87-zabbix-%E5%AE%9E%E7%8E%B0-logstash-%E7%9A%84%E7%9B%91%E6%8E%A7/</guid>
+      <description>参考：监控方案 由于 Logstash 的 Pipeline 模式，通过 filter metrics 插件和 output zabbix 插件即可实现对 Logstash 处理 TPS 的监控。 Logstash Pipeline 模型 由于 logstash-output-zabbix 插件不是 Logstash 的官方插件，因此使用前需要手动先安装该</description>
+    </item>
+    
+  </channel>
+</rss>

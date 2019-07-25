@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>plantuml on ITSYC</title>
+    <link>https://ifrenzyc.github.io/tags/plantuml/</link>
+    <description>Recent content in plantuml on ITSYC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; Copyright 2017 Yang Chuang</copyright>
+    <lastBuildDate>Mon, 05 Jun 2017 10:12:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://ifrenzyc.github.io/tags/plantuml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在 Emacs 中使用 PlantUML</title>
+      <link>https://ifrenzyc.github.io/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</link>
+      <pubDate>Mon, 05 Jun 2017 10:12:34 +0800</pubDate>
+      
+      <guid>https://ifrenzyc.github.io/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</guid>
+      <description>PlantUML 的使用依赖与 Java 环境，因此需要在系统上先安装好 Java 环境。 下载 PlantUML jar：PlantUML compiled Jar。 plantuml-mode：skuro/pla</description>
+    </item>
+    
+  </channel>
+</rss>
