@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ifrenzyc.github.io/about/</loc>
+    <loc>https://ifrenzyc.github.io/about/about/</loc>
     <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -74,6 +74,37 @@
     <lastmod>2019-04-17T18:19:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ifrenzyc.github.io/tags/blog/</loc>
+    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ifrenzyc.github.io/tags/hugo/</loc>
+    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ifrenzyc.github.io/tags/org-mode/</loc>
+    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ifrenzyc.github.io/categories/%E6%8A%98%E8%85%BE-blog/</loc>
+    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -163,12 +194,6 @@
     <lastmod>2017-06-05T10:12:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ifrenzyc.github.io/categories/hexo/</loc>
-    <lastmod>2017-06-04T08:36:32+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

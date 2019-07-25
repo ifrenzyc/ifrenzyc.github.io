@@ -14,10 +14,10 @@
     
     <item>
       <title>About</title>
-      <link>https://ifrenzyc.github.io/about/</link>
+      <link>https://ifrenzyc.github.io/about/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/about/</guid>
+      <guid>https://ifrenzyc.github.io/about/about/</guid>
       <description>Hugo is a static site engine written in Go.
 It makes use of a variety of open source projects including:
  Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.</description>
@@ -39,6 +39,15 @@ It makes use of a variety of open source projects including:
       
       <guid>https://ifrenzyc.github.io/post/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</guid>
       <description>近期在做系统版本发布相关的工作，正好对灰度发布等相关的概念做了一些了解。因此将这些概念相关的一些知识整理起来，方便对比和理解。 灰度发布 金丝雀</description>
+    </item>
+    
+    <item>
+      <title>使用 Hugo &#43; Orgmode 构建博客</title>
+      <link>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 29 Dec 2017 11:49:25 +0800</pubDate>
+      
+      <guid>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>使用 Hugo 搭建自己的静态博客。 Hugo 是 spf13 大神基于 Golang 开发的静态网站生成器。GitHub 本地安装和使用 安装 brew 里面已经有这个包了，直接用 brew 安装即可。 1 $ brew</description>
     </item>
     
     <item>

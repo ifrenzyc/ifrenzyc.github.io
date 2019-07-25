@@ -31,6 +31,15 @@
     </item>
     
     <item>
+      <title>折腾 Blog</title>
+      <link>https://ifrenzyc.github.io/categories/%E6%8A%98%E8%85%BE-blog/</link>
+      <pubDate>Fri, 29 Dec 2017 11:49:25 +0800</pubDate>
+      
+      <guid>https://ifrenzyc.github.io/categories/%E6%8A%98%E8%85%BE-blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>数据库</title>
       <link>https://ifrenzyc.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Fri, 17 Nov 2017 20:19:34 +0800</pubDate>
@@ -45,15 +54,6 @@
       <pubDate>Tue, 27 Jun 2017 10:12:34 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/categories/elastic-stack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hexo</title>
-      <link>https://ifrenzyc.github.io/categories/hexo/</link>
-      <pubDate>Sun, 04 Jun 2017 08:36:32 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/categories/hexo/</guid>
       <description></description>
     </item>
     
