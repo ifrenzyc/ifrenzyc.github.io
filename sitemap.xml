@@ -217,6 +217,11 @@
   </url>
   
   <url>
+    <loc>https://ifrenzyc.github.io/readme/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ifrenzyc.github.io/archives/</loc>
     <priority>0</priority>
   </url>
