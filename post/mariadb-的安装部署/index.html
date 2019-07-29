@@ -1,780 +1,357 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>MariaDB 的安装部署 - ITSYC</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.56.0" />
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <title>MariaDB 的安装部署 &middot; ITSYC</title>
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
 
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
 
-<meta name="author" content="ifrenzyc" /><meta name="description" content="MySQL 的版本选择及安装部署 由于 MariaDB 是基于 MySQL 分支开发的，对一些 bug 修复和特性支持做得更好一些，本文介绍 MariaDB 的简易安装。 版本选取 MySQL: 5.7.x: 5.7.16(current) MariaDB: 10.1.x: 10.1.19(current) 推荐！ MariaDB 10.1 版本" /><meta name="keywords" content="Hugo, theme, even" />
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
 
+  <link rel="stylesheet" href="/css/blackburn.css">
 
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
+  
+  
 
+  
 
-<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+  <link rel="shortcut icon" href="https://ifrenzyc.github.io/img/favicon.ico" type="image/x-icon" />
 
-
-<link rel="canonical" href="https://ifrenzyc.github.io/post/mariadb-%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="MariaDB 的安装部署" />
-<meta property="og:description" content="MySQL 的版本选择及安装部署 由于 MariaDB 是基于 MySQL 分支开发的，对一些 bug 修复和特性支持做得更好一些，本文介绍 MariaDB 的简易安装。 版本选取 MySQL: 5.7.x: 5.7.16(current) MariaDB: 10.1.x: 10.1.19(current) 推荐！ MariaDB 10.1 版本" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://ifrenzyc.github.io/post/mariadb-%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" />
-<meta property="article:published_time" content="2017-11-17T20:19:34&#43;08:00"/>
-<meta property="article:modified_time" content="2017-11-17T20:19:34&#43;08:00"/>
-
-<meta itemprop="name" content="MariaDB 的安装部署">
-<meta itemprop="description" content="MySQL 的版本选择及安装部署 由于 MariaDB 是基于 MySQL 分支开发的，对一些 bug 修复和特性支持做得更好一些，本文介绍 MariaDB 的简易安装。 版本选取 MySQL: 5.7.x: 5.7.16(current) MariaDB: 10.1.x: 10.1.19(current) 推荐！ MariaDB 10.1 版本">
-
-
-<meta itemprop="datePublished" content="2017-11-17T20:19:34&#43;08:00" />
-<meta itemprop="dateModified" content="2017-11-17T20:19:34&#43;08:00" />
-<meta itemprop="wordCount" content="4011">
-
-
-
-<meta itemprop="keywords" content="mariadb," />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MariaDB 的安装部署"/>
-<meta name="twitter:description" content="MySQL 的版本选择及安装部署 由于 MariaDB 是基于 MySQL 分支开发的，对一些 bug 修复和特性支持做得更好一些，本文介绍 MariaDB 的简易安装。 版本选取 MySQL: 5.7.x: 5.7.16(current) MariaDB: 10.1.x: 10.1.19(current) 推荐！ MariaDB 10.1 版本"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
+  
+  
 
 </head>
+
+
 <body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">ITSYC</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/about/about/">
-        <li class="mobile-menu-item">About</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">ITSYC</a>
-</div>
+<div id="layout">
 
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/about/">About</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
-    </header>
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
 
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/categories/">Categories</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/tags/">Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/archives/">Archives</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/about/">About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
     
-    <header class="post-header">
-      <h1 class="post-title">MariaDB 的安装部署</h1>
 
-      <div class="post-meta">
-        <span class="post-time"> 2017-11-17 </span>
-        <div class="post-category">
-            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
-            </div>
-        
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">文章目录</h2>
-  <div class="post-toc-content always-active">
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; Copyright 2017 Yang Chuang</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
   </div>
 </div>
-    <div class="post-content">
-      <h1 id="mysql-的版本选择及安装部署">MySQL 的版本选择及安装部署</h1>
 
-<p>由于 MariaDB 是基于 MySQL 分支开发的，对一些 bug 修复和特性支持做得更好一些，本文介绍 MariaDB 的简易安装。</p>
+</div>
 
-<h2 id="版本选取">版本选取</h2>
 
+  <div id="main">
+
+
+<div class="header">
+  <h1>MariaDB 的安装部署</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>17 Nov 2017, 20:19</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://ifrenzyc.github.io/tags/mariadb">mariadb</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+<h1 id="headline-1">
+MySQL 的版本选择及安装部署
+</h1>
+<p>
+由于 MariaDB 是基于 MySQL 分支开发的，对一些 bug 修复和特性支持做得更好一些，本文介绍 MariaDB 的简易安装。
+</p>
+<h2 id="headline-2">
+版本选取
+</h2>
 <ul>
-<li>MySQL: 5.7.x: 5.7.16(current)</li>
-<li>MariaDB: 10.1.x: 10.1.19(current)  <strong>推荐！</strong></li>
+<li>
+<p>
+MySQL: 5.7.x: 5.7.16(current)
+</p>
+</li>
+<li>
+<p>
+MariaDB: 10.1.x: 10.1.19(current)  <strong>推荐！</strong>
+</p>
+</li>
+<li>
+<p>
+MariaDB 10.1 版本是基于 MySQL 5.7 版本开发的
+</p>
+</li>
+<li>
+<p>
+MySQL JDBC: 5.1.40
+</p>
+</li>
 </ul>
-
+<p>
+<strong>为什么是选取 MySQL 5.7.x 和 MariaDB 10.1.x 版本？</strong>
+</p>
+<p>
+目前 MySQL 5.7.x 已经是一个可以稳定使用的版本，且功能较完善，性能相对以前版本有较大的提升。而，MariaDB 10.1.x 版本是基于 MySQL 5.7.x 分支改造的，两者基本可以互相替换。而原来的 MySQL 5.6 版本和 MariaDB 10.0 版本是一个过渡版本，没有比较好的解决性能问题。因此不推荐这个版本。
+</p>
+<p>
+<strong>以下的安装过程均是基于 MariaDB 10.1.x 版本编写的，如需替换成其他版本，请再借鉴其他介绍文档！</strong>
+</p>
+<h2 id="headline-3">
+安装部署
+</h2>
+<h3 id="headline-4">
+系统版本及安装介质
+</h3>
+<p>
+本文档采用编译源码安装，并且安装在 CentOS 6.4 系统上，其他版本或系统，本章节内容有一定参考价值，请结合官方安装文档。
+</p>
 <ul>
-<li>MariaDB 10.1 版本是基于 MySQL 5.7 版本开发的</li>
-<li>MySQL JDBC: 5.1.40</li>
+<li>
+<p>
+安装宿主系统：CentOS 6.4 x86_64(amd64)
+</p>
+</li>
+<li>
+<p>
+MariaDB：10.1.19
+</p>
+</li>
 </ul>
-
-<p><strong>为什么是选取 MySQL 5.7.x 和 MariaDB 10.1.x 版本？</strong></p>
-
-<p>目前 MySQL 5.7.x 已经是一个可以稳定使用的版本，且功能较完善，性能相对以前版本有较大的提升。而，MariaDB 10.1.x 版本是基于 MySQL 5.7.x 分支改造的，两者基本可以互相替换。而原来的 MySQL 5.6 版本和 MariaDB 10.0 版本是一个过渡版本，没有比较好的解决性能问题。因此不推荐这个版本。</p>
-
-<p><strong>以下的安装过程均是基于 MariaDB 10.1.x 版本编写的，如需替换成其他版本，请再借鉴其他介绍文档！</strong></p>
-
-<h2 id="安装部署">安装部署</h2>
-
-<h3 id="系统版本及安装介质">系统版本及安装介质</h3>
-
-<p>本文档采用编译源码安装，并且安装在 CentOS 6.4 系统上，其他版本或系统，本章节内容有一定参考价值，请结合官方安装文档。</p>
-
-<ul>
-<li>安装宿主系统：CentOS 6.4 x86_64(amd64)</li>
-<li>MariaDB：10.1.19</li>
-</ul>
-
-<h3 id="下载-mariadb-安装介质">下载 MariaDB 安装介质</h3>
-
-<p>从 <a href="https://downloads.mariadb.org/mariadb/10.1.19/" title="官网">官网</a> 下载 MariaDB 的安装介质，选择版本为 10.1.x 的，x 为小版本号，建议选择较高的。请勿选择 10.2.x 或者 10.0.x 版本，这个是大版本的变更，其功能和安装、配置等可能存在差异。</p>
-
-<p>以下安装说明均以下载的 mariadb-10.1.19-linux-x86_64.tar.gz 包为例，安装过程中，请自行根据具体的包名和版本做适当调整。</p>
-
-<h3 id="安装-mariadb-服务">安装 MariaDB 服务</h3>
-
-<p><code>mariadb-10.1.19-linux-x86_64.tar.gz</code> 包为 MariaDB 的二进制包，基本是解压即可使用，以下内容主要是配置一些环境信息和开机启动脚本。</p>
-
-<p>将 .tar.gz 包上传至需要安装的服务器，并解压（建议将其解压到 <code>/opt</code> 目录下，并命名为 <code>mariadb</code> ）</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  <span class="c1"># cp ./mariadb-10.1.19-linux-x86_64.tar.gz /opt/mariadb-10.1.19-linux-x86_64.tar.gz</span>
-  <span class="c1"># cd /opt</span>
-  <span class="c1"># tar -zxvf mariadb-10.1.19-linux-x86_64.tar.gz</span>
-  <span class="c1"># mv mariadb-10.1.19-linux-x86_64 mariadb</span></code></pre></td></tr></table>
-</div>
-</div>
-<p><strong>注：</strong> <code>/opt</code> 目录下操作需要 root 权限。</p>
-
-<p><strong>创建用户组及用户</strong></p>
-
-<p>运行 MySQL 服务时，建议其数据权限指定为 mysql 用户。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  <span class="c1"># groupadd mysql</span>
-  <span class="c1"># useradd -g mysql mysql</span>
-  <span class="c1"># passwd mysql</span>
-  New password:    <span class="c1"># 输入 mysql 用户密码</span>
-  Retype new password:   <span class="c1"># 再次输入 mysql 用户密码</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>*将 MariaDB 的运行脚本添加到环境变量*
-修改 mysql 用户的 <code>~/.bash_profile</code> ，添加 <code>/opt/mariadb/bin</code> 到 $PATH 变量里面。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  $ su - mysql
+<h3 id="headline-5">
+下载 MariaDB 安装介质
+</h3>
+<p>
+从 <a href="https://downloads.mariadb.org/mariadb/10.1.19/">官网</a> 下载 MariaDB 的安装介质，选择版本为 10.1.x 的，x 为小版本号，建议选择较高的。请勿选择 10.2.x 或者 10.0.x 版本，这个是大版本的变更，其功能和安装、配置等可能存在差异。
+</p>
+<p>
+以下安装说明均以下载的 mariadb-10.1.19-linux-x86_64.tar.gz 包为例，安装过程中，请自行根据具体的包名和版本做适当调整。
+</p>
+<h3 id="headline-6">
+安装 MariaDB 服务
+</h3>
+<p>
+<code class="verbatim">mariadb-10.1.19-linux-x86_64.tar.gz</code> 包为 MariaDB 的二进制包，基本是解压即可使用，以下内容主要是配置一些环境信息和开机启动脚本。
+</p>
+<p>
+将 .tar.gz 包上传至需要安装的服务器，并解压（建议将其解压到 <code class="verbatim">/opt</code> 目录下，并命名为 <code class="verbatim">mariadb</code> ）
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  <span style="color:#75715e"># cp ./mariadb-10.1.19-linux-x86_64.tar.gz /opt/mariadb-10.1.19-linux-x86_64.tar.gz</span>
+  <span style="color:#75715e"># cd /opt</span>
+  <span style="color:#75715e"># tar -zxvf mariadb-10.1.19-linux-x86_64.tar.gz</span>
+  <span style="color:#75715e"># mv mariadb-10.1.19-linux-x86_64 mariadb</span></code></pre></div>
+</pre>
+<p>
+<strong>注：</strong> <code class="verbatim">/opt</code> 目录下操作需要 root 权限。
+</p>
+<p>
+<strong>创建用户组及用户</strong>
+</p>
+<p>
+运行 MySQL 服务时，建议其数据权限指定为 mysql 用户。
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  <span style="color:#75715e"># groupadd mysql</span>
+  <span style="color:#75715e"># useradd -g mysql mysql</span>
+  <span style="color:#75715e"># passwd mysql</span>
+  New password:    <span style="color:#75715e"># 输入 mysql 用户密码</span>
+  Retype new password:   <span style="color:#75715e"># 再次输入 mysql 用户密码</span></code></pre></div>
+</pre>
+<p>
+<strong>将 MariaDB 的运行脚本添加到环境变量</strong>
+修改 mysql 用户的 <code class="verbatim">~/.bash_profile</code> ，添加 <code class="verbatim">/opt/mariadb/bin</code> 到 $PATH 变量里面。
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  $ su - mysql
   $ vim ~/.bash_profile
 
-  <span class="c1"># 在最后添加一下内容</span>
-  <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/opt/mariadb/bin:/opt/mariadb/scripts
-  <span class="nb">export</span> PATH</code></pre></td></tr></table>
-</div>
-</div>
-<p>保存退出后执行 <code>source ~/.bash_profile</code> 重新加载当前 shell 变量。</p>
-
-<h3 id="配置数据库实例参数">配置数据库实例参数</h3>
-
-<p>安装完成 MariaDB 服务后，需要初始化数据库实例才能正常运行，以下内容仅以在一台服务器上安装一个 MySQL 实例为例子编写，对于需要在一台服务器上安装多个 MySQL 实例请参考相关内容。</p>
-
-<p>把 /opt/mariadb/support-files 下的 my-large.cnf 复制到 /etc 目录下，并改为 my.cnf。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  <span class="c1"># cp /opt/mariadb/support-files/my-large.cnf /etc/my.cnf</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>修改 /etc/my.cnf 文件内容为以下内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-conf" data-lang="conf"><span class="lnt">  1
-</span><span class="lnt">  2
-</span><span class="lnt">  3
-</span><span class="lnt">  4
-</span><span class="lnt">  5
-</span><span class="lnt">  6
-</span><span class="lnt">  7
-</span><span class="lnt">  8
-</span><span class="lnt">  9
-</span><span class="lnt"> 10
-</span><span class="lnt"> 11
-</span><span class="lnt"> 12
-</span><span class="lnt"> 13
-</span><span class="lnt"> 14
-</span><span class="lnt"> 15
-</span><span class="lnt"> 16
-</span><span class="lnt"> 17
-</span><span class="lnt"> 18
-</span><span class="lnt"> 19
-</span><span class="lnt"> 20
-</span><span class="lnt"> 21
-</span><span class="lnt"> 22
-</span><span class="lnt"> 23
-</span><span class="lnt"> 24
-</span><span class="lnt"> 25
-</span><span class="lnt"> 26
-</span><span class="lnt"> 27
-</span><span class="lnt"> 28
-</span><span class="lnt"> 29
-</span><span class="lnt"> 30
-</span><span class="lnt"> 31
-</span><span class="lnt"> 32
-</span><span class="lnt"> 33
-</span><span class="lnt"> 34
-</span><span class="lnt"> 35
-</span><span class="lnt"> 36
-</span><span class="lnt"> 37
-</span><span class="lnt"> 38
-</span><span class="lnt"> 39
-</span><span class="lnt"> 40
-</span><span class="lnt"> 41
-</span><span class="lnt"> 42
-</span><span class="lnt"> 43
-</span><span class="lnt"> 44
-</span><span class="lnt"> 45
-</span><span class="lnt"> 46
-</span><span class="lnt"> 47
-</span><span class="lnt"> 48
-</span><span class="lnt"> 49
-</span><span class="lnt"> 50
-</span><span class="lnt"> 51
-</span><span class="lnt"> 52
-</span><span class="lnt"> 53
-</span><span class="lnt"> 54
-</span><span class="lnt"> 55
-</span><span class="lnt"> 56
-</span><span class="lnt"> 57
-</span><span class="lnt"> 58
-</span><span class="lnt"> 59
-</span><span class="lnt"> 60
-</span><span class="lnt"> 61
-</span><span class="lnt"> 62
-</span><span class="lnt"> 63
-</span><span class="lnt"> 64
-</span><span class="lnt"> 65
-</span><span class="lnt"> 66
-</span><span class="lnt"> 67
-</span><span class="lnt"> 68
-</span><span class="lnt"> 69
-</span><span class="lnt"> 70
-</span><span class="lnt"> 71
-</span><span class="lnt"> 72
-</span><span class="lnt"> 73
-</span><span class="lnt"> 74
-</span><span class="lnt"> 75
-</span><span class="lnt"> 76
-</span><span class="lnt"> 77
-</span><span class="lnt"> 78
-</span><span class="lnt"> 79
-</span><span class="lnt"> 80
-</span><span class="lnt"> 81
-</span><span class="lnt"> 82
-</span><span class="lnt"> 83
-</span><span class="lnt"> 84
-</span><span class="lnt"> 85
-</span><span class="lnt"> 86
-</span><span class="lnt"> 87
-</span><span class="lnt"> 88
-</span><span class="lnt"> 89
-</span><span class="lnt"> 90
-</span><span class="lnt"> 91
-</span><span class="lnt"> 92
-</span><span class="lnt"> 93
-</span><span class="lnt"> 94
-</span><span class="lnt"> 95
-</span><span class="lnt"> 96
-</span><span class="lnt"> 97
-</span><span class="lnt"> 98
-</span><span class="lnt"> 99
-</span><span class="lnt">100
-</span><span class="lnt">101
-</span><span class="lnt">102
-</span><span class="lnt">103
-</span><span class="lnt">104
-</span><span class="lnt">105
-</span><span class="lnt">106
-</span><span class="lnt">107
-</span><span class="lnt">108
-</span><span class="lnt">109
-</span><span class="lnt">110
-</span><span class="lnt">111
-</span><span class="lnt">112
-</span><span class="lnt">113
-</span><span class="lnt">114
-</span><span class="lnt">115
-</span><span class="lnt">116
-</span><span class="lnt">117
-</span><span class="lnt">118
-</span><span class="lnt">119
-</span><span class="lnt">120
-</span><span class="lnt">121
-</span><span class="lnt">122
-</span><span class="lnt">123
-</span><span class="lnt">124
-</span><span class="lnt">125
-</span><span class="lnt">126
-</span><span class="lnt">127
-</span><span class="lnt">128
-</span><span class="lnt">129
-</span><span class="lnt">130
-</span><span class="lnt">131
-</span><span class="lnt">132
-</span><span class="lnt">133
-</span><span class="lnt">134
-</span><span class="lnt">135
-</span><span class="lnt">136
-</span><span class="lnt">137
-</span><span class="lnt">138
-</span><span class="lnt">139
-</span><span class="lnt">140
-</span><span class="lnt">141
-</span><span class="lnt">142
-</span><span class="lnt">143
-</span><span class="lnt">144
-</span><span class="lnt">145
-</span><span class="lnt">146
-</span><span class="lnt">147
-</span><span class="lnt">148
-</span><span class="lnt">149
-</span><span class="lnt">150
-</span><span class="lnt">151
-</span><span class="lnt">152
-</span><span class="lnt">153
-</span><span class="lnt">154
-</span><span class="lnt">155
-</span><span class="lnt">156
-</span><span class="lnt">157
-</span><span class="lnt">158
-</span><span class="lnt">159
-</span><span class="lnt">160
-</span><span class="lnt">161
-</span><span class="lnt">162
-</span><span class="lnt">163
-</span><span class="lnt">164
-</span><span class="lnt">165
-</span><span class="lnt">166
-</span><span class="lnt">167
-</span><span class="lnt">168
-</span><span class="lnt">169
-</span><span class="lnt">170
-</span><span class="lnt">171
-</span><span class="lnt">172
-</span><span class="lnt">173
-</span><span class="lnt">174
-</span><span class="lnt">175
-</span><span class="lnt">176
-</span><span class="lnt">177
-</span><span class="lnt">178
-</span><span class="lnt">179
-</span><span class="lnt">180
-</span><span class="lnt">181
-</span><span class="lnt">182
-</span><span class="lnt">183
-</span><span class="lnt">184
-</span><span class="lnt">185
-</span><span class="lnt">186
-</span><span class="lnt">187
-</span><span class="lnt">188
-</span><span class="lnt">189
-</span><span class="lnt">190
-</span><span class="lnt">191
-</span><span class="lnt">192
-</span><span class="lnt">193
-</span><span class="lnt">194
-</span><span class="lnt">195
-</span><span class="lnt">196
-</span><span class="lnt">197
-</span><span class="lnt">198
-</span><span class="lnt">199
-</span><span class="lnt">200
-</span><span class="lnt">201
-</span><span class="lnt">202
-</span><span class="lnt">203
-</span><span class="lnt">204
-</span><span class="lnt">205
-</span><span class="lnt">206
-</span><span class="lnt">207
-</span><span class="lnt">208
-</span><span class="lnt">209
-</span><span class="lnt">210
-</span><span class="lnt">211
-</span><span class="lnt">212
-</span><span class="lnt">213
-</span><span class="lnt">214
-</span><span class="lnt">215
-</span><span class="lnt">216
-</span><span class="lnt">217
-</span><span class="lnt">218
-</span><span class="lnt">219
-</span><span class="lnt">220
-</span><span class="lnt">221
-</span><span class="lnt">222
-</span><span class="lnt">223
-</span><span class="lnt">224
-</span><span class="lnt">225
-</span><span class="lnt">226
-</span><span class="lnt">227
-</span><span class="lnt">228
-</span><span class="lnt">229
-</span><span class="lnt">230
-</span><span class="lnt">231
-</span><span class="lnt">232
-</span><span class="lnt">233
-</span><span class="lnt">234
-</span><span class="lnt">235
-</span><span class="lnt">236
-</span><span class="lnt">237
-</span><span class="lnt">238
-</span><span class="lnt">239
-</span><span class="lnt">240
-</span><span class="lnt">241
-</span><span class="lnt">242
-</span><span class="lnt">243
-</span><span class="lnt">244
-</span><span class="lnt">245
-</span><span class="lnt">246
-</span><span class="lnt">247
-</span><span class="lnt">248
-</span><span class="lnt">249
-</span><span class="lnt">250
-</span><span class="lnt">251
-</span><span class="lnt">252
-</span><span class="lnt">253
-</span><span class="lnt">254
-</span><span class="lnt">255
-</span><span class="lnt">256
-</span><span class="lnt">257
-</span><span class="lnt">258
-</span><span class="lnt">259
-</span><span class="lnt">260
-</span><span class="lnt">261
-</span><span class="lnt">262
-</span><span class="lnt">263
-</span><span class="lnt">264
-</span><span class="lnt">265
-</span><span class="lnt">266
-</span><span class="lnt">267
-</span><span class="lnt">268
-</span><span class="lnt">269
-</span><span class="lnt">270
-</span><span class="lnt">271
-</span><span class="lnt">272
-</span><span class="lnt">273
-</span><span class="lnt">274
-</span><span class="lnt">275
-</span><span class="lnt">276
-</span><span class="lnt">277
-</span><span class="lnt">278
-</span><span class="lnt">279
-</span><span class="lnt">280
-</span><span class="lnt">281
-</span><span class="lnt">282
-</span><span class="lnt">283
-</span><span class="lnt">284
-</span><span class="lnt">285
-</span><span class="lnt">286
-</span><span class="lnt">287
-</span><span class="lnt">288
-</span><span class="lnt">289
-</span><span class="lnt">290
-</span><span class="lnt">291
-</span><span class="lnt">292
-</span><span class="lnt">293
-</span><span class="lnt">294
-</span><span class="lnt">295
-</span><span class="lnt">296
-</span><span class="lnt">297
-</span><span class="lnt">298
-</span><span class="lnt">299
-</span><span class="lnt">300
-</span><span class="lnt">301
-</span><span class="lnt">302
-</span><span class="lnt">303
-</span><span class="lnt">304
-</span><span class="lnt">305
-</span><span class="lnt">306
-</span><span class="lnt">307
-</span><span class="lnt">308
-</span><span class="lnt">309
-</span><span class="lnt">310
-</span><span class="lnt">311
-</span><span class="lnt">312
-</span><span class="lnt">313
-</span><span class="lnt">314
-</span><span class="lnt">315
-</span><span class="lnt">316
-</span><span class="lnt">317
-</span><span class="lnt">318
-</span><span class="lnt">319
-</span><span class="lnt">320
-</span><span class="lnt">321
-</span><span class="lnt">322
-</span><span class="lnt">323
-</span><span class="lnt">324
-</span><span class="lnt">325
-</span><span class="lnt">326
-</span><span class="lnt">327
-</span><span class="lnt">328
-</span><span class="lnt">329
-</span><span class="lnt">330
-</span><span class="lnt">331
-</span><span class="lnt">332
-</span><span class="lnt">333
-</span><span class="lnt">334
-</span><span class="lnt">335
-</span><span class="lnt">336
-</span><span class="lnt">337
-</span><span class="lnt">338
-</span><span class="lnt">339
-</span><span class="lnt">340
-</span><span class="lnt">341
-</span><span class="lnt">342
-</span><span class="lnt">343
-</span><span class="lnt">344
-</span><span class="lnt">345
-</span><span class="lnt">346
-</span><span class="lnt">347
-</span><span class="lnt">348
-</span><span class="lnt">349
-</span><span class="lnt">350
-</span><span class="lnt">351
-</span><span class="lnt">352
-</span><span class="lnt">353
-</span><span class="lnt">354
-</span><span class="lnt">355
-</span><span class="lnt">356
-</span><span class="lnt">357
-</span><span class="lnt">358
-</span><span class="lnt">359
-</span><span class="lnt">360
-</span><span class="lnt">361
-</span><span class="lnt">362
-</span><span class="lnt">363
-</span><span class="lnt">364
-</span><span class="lnt">365
-</span><span class="lnt">366
-</span><span class="lnt">367
-</span><span class="lnt">368
-</span><span class="lnt">369
-</span><span class="lnt">370
-</span><span class="lnt">371
-</span><span class="lnt">372
-</span><span class="lnt">373
-</span><span class="lnt">374
-</span><span class="lnt">375
-</span><span class="lnt">376
-</span><span class="lnt">377
-</span><span class="lnt">378
-</span><span class="lnt">379
-</span><span class="lnt">380
-</span><span class="lnt">381
-</span><span class="lnt">382
-</span><span class="lnt">383
-</span><span class="lnt">384
-</span><span class="lnt">385
-</span><span class="lnt">386
-</span><span class="lnt">387
-</span><span class="lnt">388
-</span><span class="lnt">389
-</span><span class="lnt">390
-</span><span class="lnt">391
-</span><span class="lnt">392
-</span><span class="lnt">393
-</span><span class="lnt">394
-</span><span class="lnt">395
-</span><span class="lnt">396
-</span><span class="lnt">397
-</span><span class="lnt">398
-</span><span class="lnt">399
-</span><span class="lnt">400
-</span><span class="lnt">401
-</span><span class="lnt">402
-</span><span class="lnt">403
-</span><span class="lnt">404
-</span><span class="lnt">405
-</span><span class="lnt">406
-</span><span class="lnt">407
-</span><span class="lnt">408
-</span><span class="lnt">409
-</span><span class="lnt">410
-</span><span class="lnt">411
-</span><span class="lnt">412
-</span><span class="lnt">413
-</span><span class="lnt">414
-</span><span class="lnt">415
-</span><span class="lnt">416
-</span><span class="lnt">417
-</span><span class="lnt">418
-</span><span class="lnt">419
-</span><span class="lnt">420
-</span><span class="lnt">421
-</span><span class="lnt">422
-</span><span class="lnt">423
-</span><span class="lnt">424
-</span><span class="lnt">425
-</span><span class="lnt">426
-</span><span class="lnt">427
-</span><span class="lnt">428
-</span><span class="lnt">429
-</span><span class="lnt">430
-</span><span class="lnt">431
-</span><span class="lnt">432
-</span><span class="lnt">433
-</span><span class="lnt">434
-</span><span class="lnt">435
-</span><span class="lnt">436
-</span><span class="lnt">437
-</span><span class="lnt">438
-</span><span class="lnt">439
-</span><span class="lnt">440
-</span><span class="lnt">441
-</span><span class="lnt">442
-</span><span class="lnt">443
-</span><span class="lnt">444
-</span><span class="lnt">445
-</span><span class="lnt">446
-</span><span class="lnt">447
-</span><span class="lnt">448
-</span><span class="lnt">449
-</span><span class="lnt">450
-</span><span class="lnt">451
-</span><span class="lnt">452
-</span><span class="lnt">453
-</span><span class="lnt">454
-</span><span class="lnt">455
-</span><span class="lnt">456
-</span><span class="lnt">457
-</span><span class="lnt">458
-</span><span class="lnt">459
-</span><span class="lnt">460
-</span><span class="lnt">461
-</span><span class="lnt">462
-</span><span class="lnt">463
-</span><span class="lnt">464
-</span><span class="lnt">465
-</span><span class="lnt">466
-</span><span class="lnt">467
-</span><span class="lnt">468
-</span><span class="lnt">469
-</span><span class="lnt">470
-</span><span class="lnt">471
-</span><span class="lnt">472
-</span><span class="lnt">473
-</span><span class="lnt">474
-</span><span class="lnt">475
-</span><span class="lnt">476
-</span><span class="lnt">477
-</span><span class="lnt">478
-</span><span class="lnt">479
-</span><span class="lnt">480
-</span><span class="lnt">481
-</span><span class="lnt">482
-</span><span class="lnt">483
-</span><span class="lnt">484
-</span><span class="lnt">485
-</span><span class="lnt">486
-</span><span class="lnt">487
-</span><span class="lnt">488
-</span><span class="lnt">489
-</span><span class="lnt">490
-</span><span class="lnt">491
-</span><span class="lnt">492
-</span><span class="lnt">493
-</span><span class="lnt">494
-</span><span class="lnt">495
-</span><span class="lnt">496
-</span><span class="lnt">497
-</span><span class="lnt">498
-</span><span class="lnt">499
-</span><span class="lnt">500
-</span><span class="lnt">501
-</span><span class="lnt">502
-</span><span class="lnt">503
-</span><span class="lnt">504
-</span><span class="lnt">505
-</span><span class="lnt">506
-</span><span class="lnt">507
-</span><span class="lnt">508
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-conf" data-lang="conf">  # vim /etc/my.cnf
+  <span style="color:#75715e"># 在最后添加一下内容</span>
+  PATH<span style="color:#f92672">=</span>$PATH:/opt/mariadb/bin:/opt/mariadb/scripts
+  export PATH</code></pre></div>
+</pre>
+<p>
+保存退出后执行 <code class="verbatim">source ~/.bash_profile</code> 重新加载当前 shell 变量。
+</p>
+<h3 id="headline-7">
+配置数据库实例参数
+</h3>
+<p>
+安装完成 MariaDB 服务后，需要初始化数据库实例才能正常运行，以下内容仅以在一台服务器上安装一个 MySQL 实例为例子编写，对于需要在一台服务器上安装多个 MySQL 实例请参考相关内容。
+</p>
+<p>
+把 /opt/mariadb/support-files 下的 my-large.cnf 复制到 /etc 目录下，并改为 my.cnf。
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  <span style="color:#75715e"># cp /opt/mariadb/support-files/my-large.cnf /etc/my.cnf</span></code></pre></div>
+</pre>
+<p>
+修改 /etc/my.cnf 文件内容为以下内容：
+</p>
+<pre class="src src-conf">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">  # vim /etc/my.cnf
 
   [client]
   default-character-set=utf8
@@ -1281,28 +858,13 @@
 
   [mysqld_safe]
   open-files-limit = 8192
-  ledir=/opt/mariadb/bin</code></pre></td></tr></table>
-</div>
-</div>
-<p>以上配置将 MySQL 实例初始化到 <code>/home/mysql/mysql3306</code> 目录下，请安装时根据实际的路径修改上面配置文件中的路径，涉及配置项如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-conf" data-lang="conf"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-conf" data-lang="conf">  datadir=/home/mysql/mysql3306/data
+  ledir=/opt/mariadb/bin</code></pre></div>
+</pre>
+<p>
+以上配置将 MySQL 实例初始化到 <code class="verbatim">/home/mysql/mysql3306</code> 目录下，请安装时根据实际的路径修改上面配置文件中的路径，涉及配置项如下：
+</p>
+<pre class="src src-conf">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">  datadir=/home/mysql/mysql3306/data
   pid-file=/home/mysql/mysql3306/mysql.pid
   tmpdir=/home/mysql/mysql3306/tmp
   log-error=/home/mysql/mysql3306/logs/error3306.log
@@ -1314,127 +876,94 @@
   innodb_data_home_dir=/home/mysql/mysql3306/data
   innodb_log_group_home_dir=/home/mysql/mysql3306/data
   log-error=/home/mysql/mysql3306/logs/dump3306.log
-  ledir=/opt/mariadb/bin</code></pre></td></tr></table>
-</div>
-</div>
-<ul>
+  ledir=/opt/mariadb/bin</code></pre></div>
+</pre>
+<p>
 其他参数的修改：
-<li><code>server-id=90883306</code>   命名规则：机器 ip 后两个 + 端口</li>
-<li><code>gtid-domain-id=8890926</code>   一主两从 ip 的后一位 + 端口后一位</li>
-<li><code>innodb_buffer_pool_size=100G</code>   单实例不超过机器内存的 80%，双实例加起来不超过机器内存的 80%</li>
-<li><code>innodb_thread_concurrency=32</code>   小于等于 cpu 线程数</li>
-<li><code>log_slave_updates</code>   一主一从关闭 log_slave_updates（即注释掉），一主两从开启 <code>log_slave_updates</code></li>
+</p>
+<ul>
+<li>
+<p>
+<code class="verbatim">server-id=90883306</code>   命名规则：机器 ip 后两个 + 端口
+</p>
+</li>
+<li>
+<p>
+<code class="verbatim">gtid-domain-id=8890926</code>   一主两从 ip 的后一位 + 端口后一位
+</p>
+</li>
+<li>
+<p>
+<code class="verbatim">innodb_buffer_pool_size=100G</code>   单实例不超过机器内存的 80%，双实例加起来不超过机器内存的 80%
+</p>
+</li>
+<li>
+<p>
+<code class="verbatim">innodb_thread_concurrency=32</code>   小于等于 cpu 线程数
+</p>
+</li>
+<li>
+<p>
+<code class="verbatim">log_slave_updates</code>   一主一从关闭 log_slave_updates（即注释掉），一主两从开启 <code class="verbatim">log_slave_updates</code>
+</p>
+</li>
 </ul>
-
-<p><strong>初始化实例</strong></p>
-
-<p>切换用户到 mysql</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  $ su - mysql
-  Password:</code></pre></td></tr></table>
-</div>
-</div>
-<p>创建需要的目录</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  $ mkdir -p /home/mysql/mysql3306/
-  $ <span class="nb">cd</span> /home/mysql/mysql3306/ <span class="o">&amp;&amp;</span> mkdir <span class="o">{</span>data,logs,binlog,tmp,bin<span class="o">}</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>运行一下命令进行初始化：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  $ mysql_install_db --basedir<span class="o">=</span>/opt/mariadb/ --defaults-file<span class="o">=</span>/etc/my.cnf --user<span class="o">=</span>mysql
-  Installing MariaDB/MySQL system tables in <span class="s1">&#39;/home/mysql/mysql3306&#39;</span> ...
-  <span class="m">2016</span>-12-12  <span class="m">9</span>:12:48 <span class="m">139952692410208</span> <span class="o">[</span>Note<span class="o">]</span> /opt/mariadb/bin/mysqld <span class="o">(</span>mysqld <span class="m">10</span>.1.19-MariaDB<span class="o">)</span> starting as process <span class="m">14731</span> ...
+<p>
+<strong>初始化实例</strong>
+</p>
+<p>
+切换用户到 mysql
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  $ su - mysql
+  Password:</code></pre></div>
+</pre>
+<p>
+创建需要的目录
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  $ mkdir -p /home/mysql/mysql3306/
+  $ cd /home/mysql/mysql3306/ <span style="color:#f92672">&amp;&amp;</span> mkdir <span style="color:#f92672">{</span>data,logs,binlog,tmp,bin<span style="color:#f92672">}</span></code></pre></div>
+</pre>
+<p>
+运行一下命令进行初始化：
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  $ mysql_install_db --basedir<span style="color:#f92672">=</span>/opt/mariadb/ --defaults-file<span style="color:#f92672">=</span>/etc/my.cnf --user<span style="color:#f92672">=</span>mysql
+  Installing MariaDB/MySQL system tables in <span style="color:#e6db74">&#39;/home/mysql/mysql3306&#39;</span> ...
+  <span style="color:#ae81ff">2016</span>-12-12  <span style="color:#ae81ff">9</span>:12:48 <span style="color:#ae81ff">139952692410208</span> <span style="color:#f92672">[</span>Note<span style="color:#f92672">]</span> /opt/mariadb/bin/mysqld <span style="color:#f92672">(</span>mysqld <span style="color:#ae81ff">10</span>.1.19-MariaDB<span style="color:#f92672">)</span> starting as process <span style="color:#ae81ff">14731</span> ...
   OK
-  Filling <span class="nb">help</span> tables...
-  <span class="m">2016</span>-12-12  <span class="m">9</span>:12:54 <span class="m">140080526587744</span> <span class="o">[</span>Note<span class="o">]</span> /opt/mariadb/bin/mysqld <span class="o">(</span>mysqld <span class="m">10</span>.1.19-MariaDB<span class="o">)</span> starting as process <span class="m">14763</span> ...
+  Filling help tables...
+  <span style="color:#ae81ff">2016</span>-12-12  <span style="color:#ae81ff">9</span>:12:54 <span style="color:#ae81ff">140080526587744</span> <span style="color:#f92672">[</span>Note<span style="color:#f92672">]</span> /opt/mariadb/bin/mysqld <span style="color:#f92672">(</span>mysqld <span style="color:#ae81ff">10</span>.1.19-MariaDB<span style="color:#f92672">)</span> starting as process <span style="color:#ae81ff">14763</span> ...
   OK
   Creating OpenGIS required SP-s...
-  <span class="m">2016</span>-12-12  <span class="m">9</span>:12:59 <span class="m">140681527736160</span> <span class="o">[</span>Note<span class="o">]</span> /opt/mariadb/bin/mysqld <span class="o">(</span>mysqld <span class="m">10</span>.1.19-MariaDB<span class="o">)</span> starting as process <span class="m">14795</span> ...
+  <span style="color:#ae81ff">2016</span>-12-12  <span style="color:#ae81ff">9</span>:12:59 <span style="color:#ae81ff">140681527736160</span> <span style="color:#f92672">[</span>Note<span style="color:#f92672">]</span> /opt/mariadb/bin/mysqld <span style="color:#f92672">(</span>mysqld <span style="color:#ae81ff">10</span>.1.19-MariaDB<span style="color:#f92672">)</span> starting as process <span style="color:#ae81ff">14795</span> ...
   OK
 
-  To start mysqld at boot <span class="nb">time</span> you have to copy
-  support-files/mysql.server to the right place <span class="k">for</span> your system
+  To start mysqld at boot time you have to copy
+  support-files/mysql.server to the right place <span style="color:#66d9ef">for</span> your system
 
   PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
-  To <span class="k">do</span> so, start the server, <span class="k">then</span> issue the following commands:
+  To <span style="color:#66d9ef">do</span> so, start the server, <span style="color:#66d9ef">then</span> issue the following commands:
 
-  <span class="s1">&#39;/opt/mariadb/bin/mysqladmin&#39;</span> -u root password <span class="s1">&#39;new-password&#39;</span>
-  <span class="s1">&#39;/opt/mariadb/bin/mysqladmin&#39;</span> -u root -h <span class="m">127</span>.0.0.1 password <span class="s1">&#39;new-password&#39;</span>
+  <span style="color:#e6db74">&#39;/opt/mariadb/bin/mysqladmin&#39;</span> -u root password <span style="color:#e6db74">&#39;new-password&#39;</span>
+  <span style="color:#e6db74">&#39;/opt/mariadb/bin/mysqladmin&#39;</span> -u root -h <span style="color:#ae81ff">127</span>.0.0.1 password <span style="color:#e6db74">&#39;new-password&#39;</span>
 
   Alternatively you can run:
-  <span class="s1">&#39;/opt/mariadb/bin/mysql_secure_installation&#39;</span>
+  <span style="color:#e6db74">&#39;/opt/mariadb/bin/mysql_secure_installation&#39;</span>
 
-  which will also give you the option of removing the <span class="nb">test</span>
+  which will also give you the option of removing the test
   databases and anonymous user created by default.  This is
-  strongly recommended <span class="k">for</span> production servers.
+  strongly recommended <span style="color:#66d9ef">for</span> production servers.
 
   See the MariaDB Knowledgebase at http://mariadb.com/kb or the
-  MySQL manual <span class="k">for</span> more instructions.
+  MySQL manual <span style="color:#66d9ef">for</span> more instructions.
 
   You can start the MariaDB daemon with:
-  <span class="nb">cd</span> <span class="s1">&#39;/opt/mariadb/&#39;</span> <span class="p">;</span> /opt/mariadb/bin/mysqld_safe --datadir<span class="o">=</span><span class="s1">&#39;/home/mysql/mysql3306/data&#39;</span>
+  cd <span style="color:#e6db74">&#39;/opt/mariadb/&#39;</span> ; /opt/mariadb/bin/mysqld_safe --datadir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/home/mysql/mysql3306/data&#39;</span>
 
-  You can <span class="nb">test</span> the MariaDB daemon with mysql-test-run.pl
-  <span class="nb">cd</span> <span class="s1">&#39;/opt/mariadb/mysql-test&#39;</span> <span class="p">;</span> perl mysql-test-run.pl
+  You can test the MariaDB daemon with mysql-test-run.pl
+  cd <span style="color:#e6db74">&#39;/opt/mariadb/mysql-test&#39;</span> ; perl mysql-test-run.pl
 
   Please report any problems at http://mariadb.org/jira
 
@@ -1444,477 +973,279 @@
   Support MariaDB development by buying support/new features from MariaDB
   Corporation Ab. You can contact us about this at sales@mariadb.com.
   Alternatively consider joining our community based development effort:
-  http://mariadb.com/kb/en/contributing-to-the-mariadb-project/</code></pre></td></tr></table>
-</div>
-</div>
-<p>可以通过上面信息看到 OK。</p>
+  http://mariadb.com/kb/en/contributing-to-the-mariadb-project/</code></pre></div>
+</pre>
+<p>
+可以通过上面信息看到 OK。
+</p>
+<p>
+<img src="/images/install-mariadb/install_mysql_succ.png" alt="/images/install-mariadb/install_mysql_succ.png" title="/images/install-mariadb/install_mysql_succ.png" />
+查询 <code class="verbatim">cat /home/mysql/mysql3306/logs/error3306.log</code> 日志，没有 <code class="verbatim">[ERROR]</code> 日志标识安装成功。
+</p>
+<h3 id="headline-8">
+启动 MariaDB 实例
+</h3>
+<p>
+<strong>方式一：本文采用服务方式启动 MariaDB 服务。</strong>
+</p>
+<p>
+首先，需要拷贝配置脚本到服务启动目录：
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  <span style="color:#75715e"># cp /opt/mariab/support-files/mysql.server /etc/rc.d/init.d/mysqld</span>
+  <span style="color:#75715e"># chmod +x /etc/rc.d/init.d/mysqld</span></code></pre></div>
+</pre>
+<p>
+修改启动脚本内容：
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  <span style="color:#75715e"># vi /etc/rc.d/init.d/mysqld</span>
 
-<p><img src="/images/install-mariadb/install_mysql_succ.png" alt="/images/install-mariadb/install_mysql_succ.png" title="/images/install-mariadb/install_mysql_succ.png" />
-查询 <code>cat /home/mysql/mysql3306/logs/error3306.log</code> 日志，没有 <code>[ERROR]</code> 日志标识安装成功。</p>
-
-<h3 id="启动-mariadb-实例">启动 MariaDB 实例</h3>
-
-<p><strong>方式一：本文采用服务方式启动 MariaDB 服务。</strong></p>
-
-<p>首先，需要拷贝配置脚本到服务启动目录：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  <span class="c1"># cp /opt/mariab/support-files/mysql.server /etc/rc.d/init.d/mysqld</span>
-  <span class="c1"># chmod +x /etc/rc.d/init.d/mysqld</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>修改启动脚本内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  <span class="c1"># vi /etc/rc.d/init.d/mysqld</span>
-
-  <span class="c1"># 修改 basedir= 及 datadir= 两个参数</span>
-  <span class="nv">basedir</span><span class="o">=</span>/opt/mariadb
-  <span class="nv">datadir</span><span class="o">=</span>/home/mysql/mysql3306/data</code></pre></td></tr></table>
-</div>
-</div>
-<p>通过 service 启动服务</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  $ service mysqld start
-  Starting MySQL.161212 <span class="m">10</span>:02:09 mysqld_safe Logging to <span class="s1">&#39;/home/mysql/mysql3306/logs/mysql_3306.err&#39;</span>.
+  <span style="color:#75715e"># 修改 basedir= 及 datadir= 两个参数</span>
+  basedir<span style="color:#f92672">=</span>/opt/mariadb
+  datadir<span style="color:#f92672">=</span>/home/mysql/mysql3306/data</code></pre></div>
+</pre>
+<p>
+通过 service 启动服务
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  $ service mysqld start
+  Starting MySQL.161212 <span style="color:#ae81ff">10</span>:02:09 mysqld_safe Logging to <span style="color:#e6db74">&#39;/home/mysql/mysql3306/logs/mysql_3306.err&#39;</span>.
   ...
 
-  $ ps -ef<span class="p">|</span>grep mysql
-  mysql    <span class="m">24488</span>     <span class="m">1</span>  <span class="m">0</span> <span class="m">10</span>:02 pts/1    <span class="m">00</span>:00:00 /bin/sh /opt/mariadb/bin/mysqld_safe --datadir<span class="o">=</span>/home/mysql/mysql3306/data --pid-file<span class="o">=</span>/home/mysql/mysql3306/mysqld3306.pid
-  mysql    <span class="m">25032</span> <span class="m">24488</span>  <span class="m">0</span> <span class="m">10</span>:02 pts/1    <span class="m">00</span>:00:04 /opt/mariadb/bin/mysqld --basedir<span class="o">=</span>/opt/mariadb/ --datadir<span class="o">=</span>/home/mysql/mysql3306/data --plugin-dir<span class="o">=</span>/opt/mariadb/lib/plugin --log-err
-  <span class="nv">or</span><span class="o">=</span>/home/mysql/mysql3306/logs/mysql_3306.err --open-files-limit<span class="o">=</span><span class="m">8192</span> --pid-file<span class="o">=</span>/home/mysql/mysql3306/mysqld3306.pid --socket<span class="o">=</span>/tmp/mysql3306.sock --po
-  <span class="nv">rt</span><span class="o">=</span><span class="m">3306</span></code></pre></td></tr></table>
-</div>
-</div>
-<p><strong>方式二：采用 mysqld_safe 启动</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  $ mysqld_safe --defaults-file<span class="o">=</span>/etc/my.cnf <span class="p">&amp;</span>
+  $ ps -ef|grep mysql
+  mysql    <span style="color:#ae81ff">24488</span>     <span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span>:02 pts/1    <span style="color:#ae81ff">00</span>:00:00 /bin/sh /opt/mariadb/bin/mysqld_safe --datadir<span style="color:#f92672">=</span>/home/mysql/mysql3306/data --pid-file<span style="color:#f92672">=</span>/home/mysql/mysql3306/mysqld3306.pid
+  mysql    <span style="color:#ae81ff">25032</span> <span style="color:#ae81ff">24488</span>  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span>:02 pts/1    <span style="color:#ae81ff">00</span>:00:04 /opt/mariadb/bin/mysqld --basedir<span style="color:#f92672">=</span>/opt/mariadb/ --datadir<span style="color:#f92672">=</span>/home/mysql/mysql3306/data --plugin-dir<span style="color:#f92672">=</span>/opt/mariadb/lib/plugin --log-err
+  or<span style="color:#f92672">=</span>/home/mysql/mysql3306/logs/mysql_3306.err --open-files-limit<span style="color:#f92672">=</span><span style="color:#ae81ff">8192</span> --pid-file<span style="color:#f92672">=</span>/home/mysql/mysql3306/mysqld3306.pid --socket<span style="color:#f92672">=</span>/tmp/mysql3306.sock --po
+  rt<span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span></code></pre></div>
+</pre>
+<p>
+<strong>方式二：采用 mysqld_safe 启动</strong>
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  $ mysqld_safe --defaults-file<span style="color:#f92672">=</span>/etc/my.cnf &amp;
 
-  $ ps -ef<span class="p">|</span>grep mysql
-  mysql    <span class="m">24488</span>     <span class="m">1</span>  <span class="m">0</span> <span class="m">10</span>:02 pts/1    <span class="m">00</span>:00:00 /bin/sh /opt/mariadb/bin/mysqld_safe --datadir<span class="o">=</span>/home/mysql/mysql3306/data --pid-file<span class="o">=</span>/home/mysql/mysql3306/mysqld3306.pid
-  mysql    <span class="m">25032</span> <span class="m">24488</span>  <span class="m">0</span> <span class="m">10</span>:02 pts/1    <span class="m">00</span>:00:04 /opt/mariadb/bin/mysqld --basedir<span class="o">=</span>/opt/mariadb/ --datadir<span class="o">=</span>/home/mysql/mysql3306/data --plugin-dir<span class="o">=</span>/opt/mariadb/lib/plugin --log-err
-  <span class="nv">or</span><span class="o">=</span>/home/mysql/mysql3306/logs/mysql_3306.err --open-files-limit<span class="o">=</span><span class="m">8192</span> --pid-file<span class="o">=</span>/home/mysql/mysql3306/mysqld3306.pid --socket<span class="o">=</span>/tmp/mysql3306.sock --po
-  <span class="nv">rt</span><span class="o">=</span><span class="m">3306</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>至此，MariaDB 的安装部署已经完成。</p>
-
-<h3 id="配置-root-用户密码">配置 root 用户密码</h3>
-
-<p>启动服务成功后，MySQL 实例 root 用户的默认密码为空。
-可以通过一下命令登录：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  $ mysql -uroot -p  -S /tmp/mysql3306.sock
-  Enter password:</code></pre></td></tr></table>
-</div>
-</div>
-<p><code>Enter password:</code> 处回车即可。</p>
-
-<p>然后通过一下命令修改密码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  $ mysqladmin -u root password <span class="s1">&#39;new_password&#39;</span></code></pre></td></tr></table>
-</div>
-</div>
-<p><code>new_password</code> 处即为新密码，请修改后保存改密码，后续登录 root 用户需要输入此密码。</p>
-
-<p>如果需要修改新密码，可以先登录到 mysql 中，执行以下命令进行修改（新密码为： <code>Aa123456</code> ）：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql">  <span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="k">update</span> <span class="n">mysql</span><span class="p">.</span><span class="n">user</span> <span class="kt">set</span> <span class="n">password</span><span class="o">=</span><span class="nf">password</span><span class="p">(</span><span class="s1">&#39;Aa123456&#39;</span><span class="p">)</span> <span class="k">where</span> <span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span>
-  <span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="k">flush</span> <span class="n">privileges</span><span class="p">;</span></code></pre></td></tr></table>
-</div>
-</div>
-<h3 id="配置-root-用户远程访问">配置 root 用户远程访问</h3>
-
-<p>默认安装的 MySQL 实例 root 用户只有本地访问权限，需要通过修改 <code>mysql.user</code> 表，给 root 用户授权。
-执行以下命令：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql">  <span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="k">GRANT</span> <span class="k">ALL</span> <span class="n">PRIVILEGES</span> <span class="k">ON</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;root&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;root123&#39;</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
-  <span class="n">MariaDB</span> <span class="p">[(</span><span class="n">none</span><span class="p">)]</span><span class="o">&gt;</span> <span class="k">flush</span> <span class="n">privileges</span><span class="p">;</span></code></pre></td></tr></table>
-</div>
-</div>
-<h3 id="遇到问题-1">遇到问题 1：</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span><span class="lnt">76
-</span><span class="lnt">77
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  $ mysql_install_db --basedir<span class="o">=</span>/opt/mariadb/ --defaults-file<span class="o">=</span>/etc/my.cnf                                                            <span class="o">[</span><span class="m">95</span>/19157<span class="o">]</span>
-  Installing MariaDB/MySQL system tables in <span class="s1">&#39;/home/mysql/mysql3306&#39;</span> ...
-  <span class="m">2016</span>-12-12  <span class="m">8</span>:59:36 <span class="m">140187907016544</span> <span class="o">[</span>Note<span class="o">]</span> Using unique option prefix <span class="s1">&#39;extra-max-connection&#39;</span> is error-prone and can <span class="nb">break</span> in the future. Please use the full name <span class="s1">&#39;extra_max_conne
-</span><span class="s1">  ctions&#39;</span> instead.
-  <span class="m">2016</span>-12-12  <span class="m">8</span>:59:36 <span class="m">140187907016544</span> <span class="o">[</span>Note<span class="o">]</span> /opt/mariadb//bin/mysqld <span class="o">(</span>mysqld <span class="m">10</span>.1.19-MariaDB<span class="o">)</span> starting as process <span class="m">14447</span> ...
+  $ ps -ef|grep mysql
+  mysql    <span style="color:#ae81ff">24488</span>     <span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span>:02 pts/1    <span style="color:#ae81ff">00</span>:00:00 /bin/sh /opt/mariadb/bin/mysqld_safe --datadir<span style="color:#f92672">=</span>/home/mysql/mysql3306/data --pid-file<span style="color:#f92672">=</span>/home/mysql/mysql3306/mysqld3306.pid
+  mysql    <span style="color:#ae81ff">25032</span> <span style="color:#ae81ff">24488</span>  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span>:02 pts/1    <span style="color:#ae81ff">00</span>:00:04 /opt/mariadb/bin/mysqld --basedir<span style="color:#f92672">=</span>/opt/mariadb/ --datadir<span style="color:#f92672">=</span>/home/mysql/mysql3306/data --plugin-dir<span style="color:#f92672">=</span>/opt/mariadb/lib/plugin --log-err
+  or<span style="color:#f92672">=</span>/home/mysql/mysql3306/logs/mysql_3306.err --open-files-limit<span style="color:#f92672">=</span><span style="color:#ae81ff">8192</span> --pid-file<span style="color:#f92672">=</span>/home/mysql/mysql3306/mysqld3306.pid --socket<span style="color:#f92672">=</span>/tmp/mysql3306.sock --po
+  rt<span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span></code></pre></div>
+</pre>
+<p>
+至此，MariaDB 的安装部署已经完成。
+</p>
+<h3 id="headline-9">
+配置 root 用户密码
+</h3>
+<p>
+启动服务成功后，MySQL 实例 root 用户的默认密码为空。
+可以通过一下命令登录：
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  $ mysql -uroot -p  -S /tmp/mysql3306.sock
+  Enter password:</code></pre></div>
+</pre>
+<p>
+<code class="verbatim">Enter password:</code> 处回车即可。
+</p>
+<p>
+然后通过一下命令修改密码：
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  $ mysqladmin -u root password <span style="color:#e6db74">&#39;new_password&#39;</span></code></pre></div>
+</pre>
+<p>
+<code class="verbatim">new_password</code> 处即为新密码，请修改后保存改密码，后续登录 root 用户需要输入此密码。
+</p>
+<p>
+如果需要修改新密码，可以先登录到 mysql 中，执行以下命令进行修改（新密码为： <code class="verbatim">Aa123456</code> ）：
+</p>
+<pre class="src src-mysql">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql">  MariaDB [(none)]<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">update</span> mysql.user <span style="color:#66d9ef">set</span> password<span style="color:#f92672">=</span><span style="color:#a6e22e">password</span>(<span style="color:#e6db74">&#39;Aa123456&#39;</span>) <span style="color:#66d9ef">where</span> user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;root&#39;</span>;
+  MariaDB [(none)]<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">flush</span> privileges;</code></pre></div>
+</pre>
+<h3 id="headline-10">
+配置 root 用户远程访问
+</h3>
+<p>
+默认安装的 MySQL 实例 root 用户只有本地访问权限，需要通过修改 <code class="verbatim">mysql.user</code> 表，给 root 用户授权。
+执行以下命令：
+</p>
+<pre class="src src-mysql">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql">  MariaDB [(none)]<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> PRIVILEGES <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;root123&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;
+  MariaDB [(none)]<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">flush</span> privileges;</code></pre></div>
+</pre>
+<h3 id="headline-11">
+遇到问题 1：
+</h3>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  $ mysql_install_db --basedir<span style="color:#f92672">=</span>/opt/mariadb/ --defaults-file<span style="color:#f92672">=</span>/etc/my.cnf                                                            <span style="color:#f92672">[</span><span style="color:#ae81ff">95</span>/19157<span style="color:#f92672">]</span>
+  Installing MariaDB/MySQL system tables in <span style="color:#e6db74">&#39;/home/mysql/mysql3306&#39;</span> ...
+  <span style="color:#ae81ff">2016</span>-12-12  <span style="color:#ae81ff">8</span>:59:36 <span style="color:#ae81ff">140187907016544</span> <span style="color:#f92672">[</span>Note<span style="color:#f92672">]</span> Using unique option prefix <span style="color:#e6db74">&#39;extra-max-connection&#39;</span> is error-prone and can break in the future. Please use the full name <span style="color:#e6db74">&#39;extra_max_conne
+</span><span style="color:#e6db74">  ctions&#39;</span> instead.
+  <span style="color:#ae81ff">2016</span>-12-12  <span style="color:#ae81ff">8</span>:59:36 <span style="color:#ae81ff">140187907016544</span> <span style="color:#f92672">[</span>Note<span style="color:#f92672">]</span> /opt/mariadb//bin/mysqld <span style="color:#f92672">(</span>mysqld <span style="color:#ae81ff">10</span>.1.19-MariaDB<span style="color:#f92672">)</span> starting as process <span style="color:#ae81ff">14447</span> ...
 
   Installation of system tables failed!  Examine the logs in
-  /home/mysql/mysql3306 <span class="k">for</span> more information.
+  /home/mysql/mysql3306 <span style="color:#66d9ef">for</span> more information.
 
   The problem could be conflicting information in an external
   my.cnf files. You can ignore these by doing:
 
-      shell&gt; /opt/mariadb//scripts/scripts/mysql_install_db --defaults-file<span class="o">=</span>~/.my.cnf
+      shell&gt; /opt/mariadb//scripts/scripts/mysql_install_db --defaults-file<span style="color:#f92672">=</span>~/.my.cnf
 
   You can also try to start the mysqld daemon with:
 
-      shell&gt; /opt/mariadb//bin/mysqld --skip-grant --general-log <span class="p">&amp;</span>
+      shell&gt; /opt/mariadb//bin/mysqld --skip-grant --general-log &amp;
 
-  and use the <span class="nb">command</span> line tool /opt/mariadb//bin/mysql
+  and use the command line tool /opt/mariadb//bin/mysql
   to connect to the mysql database and look at the grant tables:
 
       shell&gt; /opt/mariadb//bin/mysql -u root mysql
-      mysql&gt; show tables<span class="p">;</span>
+      mysql&gt; show tables;
 
-  Try <span class="s1">&#39;mysqld --help&#39;</span> <span class="k">if</span> you have problems with paths.  Using
+  Try <span style="color:#e6db74">&#39;mysqld --help&#39;</span> <span style="color:#66d9ef">if</span> you have problems with paths.  Using
   --general-log gives you a log in /home/mysql/mysql3306 that may be helpful.
 
   The latest information about mysql_install_db is available at
   https://mariadb.com/kb/en/installing-system-tables-mysql_install_db
-  MariaDB is hosted on launchpad<span class="p">;</span> You can find the latest <span class="nb">source</span> and
+  MariaDB is hosted on launchpad; You can find the latest source and
   email lists at http://launchpad.net/maria
 
   Please check all of the above before submitting a bug report
   at http://mariadb.org/jira
 
   $ cat /home/mysql/mysql3306/logs/error3306.log
-  <span class="m">2016</span>-12-12 <span class="m">08</span>:59:36 7f800a664760 InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option in$
-  odb_use_sys_malloc and with the InnoDB<span class="s1">&#39;s internal memory allocator.
-</span><span class="s1">  innodb_open_files should not be greater than the open_files_limit.
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Using mutexes to ref count buffer pool pages
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: The InnoDB memory heap is disabled
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: GCC builtin __sync_synchronize() is used for memory barrier
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Compressed tables use zlib 1.2.3
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Using Linux native AIO
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Using SSE crc32 instructions
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Initializing buffer pool, size = 512.0M
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Completed initialization of buffer pool
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: The first specified data file /home/mysql/mysql3306/ibdata1 did not exist: a new database to be created!
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Setting file /home/mysql/mysql3306/ibdata1 size to 128 MB
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Database physically writes the file full: wait...
-</span><span class="s1">  InnoDB: Progress in MB: 100
-</span><span class="s1">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Setting log file /home/mysql/mysql3306/ib_logfile101 size to 1000 MB
-</span><span class="s1">  InnoDB: Progress in MB: 100 200 300 400 500 600 700 800 900 1000
-</span><span class="s1">  2016-12-12  8:59:38 140187907016544 [Note] InnoDB: Setting log file /home/mysql/mysql3306/ib_logfile1 size to 1000 MB
-</span><span class="s1">  InnoDB: Progress in MB: 100 200 300 400 500 600 700 800 900 1000
-</span><span class="s1">  2016-12-12  8:59:39 140187907016544 [Note] InnoDB: Setting log file /home/mysql/mysql3306/ib_logfile2 size to 1000 MB
-</span><span class="s1">  InnoDB: Progress in MB: 100 200 300 400 500 600 700 800 900 1000
-</span><span class="s1">  2016-12-12  8:59:40 140187907016544 [Note] InnoDB: Setting log file /home/mysql/mysql3306/ib_logfile3 size to 1000 MB
-</span><span class="s1">  InnoDB: Progress in MB: 100 200 300 400 500 600 700 8002016-12-12 08:59:41 7f800a664760 InnoDB: Error: Write to file /home/mysql/mysql3306/ib_logfile3 failed at offset 894435
-</span><span class="s1">  328.
-</span><span class="s1">  InnoDB: 1048576 bytes should have been written, only 126976 were written.
-</span><span class="s1">  InnoDB: Operating system error number 28.
-</span><span class="s1">  InnoDB: Check that your OS and file system support files of this size.
-</span><span class="s1">  InnoDB: Check also that the disk is not full or a disk quota exceeded.
-</span><span class="s1">  InnoDB: Error number 28 means &#39;</span>No space left on device<span class="s1">&#39;.
-</span><span class="s1">  InnoDB: Some operating system error numbers are described at
-</span><span class="s1">  InnoDB: http://dev.mysql.com/doc/refman/5.6/en/operating-system-error-codes.html
-</span><span class="s1">  2016-12-12  8:59:41 140187907016544 [ERROR] InnoDB: Cannot set log file /home/mysql/mysql3306/ib_logfile3 to size 1000 MB
-</span><span class="s1">  2016-12-12  8:59:41 140187907016544 [ERROR] Plugin &#39;</span>InnoDB<span class="s1">&#39; init function returned error.
-</span><span class="s1">  2016-12-12  8:59:41 140187907016544 [ERROR] Plugin &#39;</span>InnoDB<span class="s1">&#39; registration as a STORAGE ENGINE failed.
-</span><span class="s1">  2016-12-12  8:59:41 140187907016544 [ERROR] Unknown/unsupported storage engine: InnoDB
-</span><span class="s1">  2016-12-12  8:59:41 140187907016544 [ERROR] Aborting
-</span><span class="s1">
-</span><span class="s1">  2016-12-12  8:59:41 140186063206144 [Warning] mysqld: Disk is full writing &#39;</span>/home/mysql/mysql3306/aria_log.00000001<span class="err">&#39;</span> <span class="o">(</span>Errcode: <span class="m">28</span> <span class="s2">&#34;No space left on device&#34;</span><span class="o">)</span>. Waiting <span class="k">for</span> some
-  one to free space... <span class="o">(</span>Expect up to <span class="m">60</span> secs delay <span class="k">for</span> server to <span class="k">continue</span> after freeing disk space<span class="o">)</span>
-  <span class="m">2016</span>-12-12  <span class="m">8</span>:59:41 <span class="m">140186063206144</span> <span class="o">[</span>Warning<span class="o">]</span> mysqld: Retry in <span class="m">60</span> secs. Message reprinted in <span class="m">600</span> secs</code></pre></td></tr></table>
-</div>
-</div>
-<p>修改 /etc/my.cnf
-改小：innodb_log_file_size=128M</p>
+  <span style="color:#ae81ff">2016</span>-12-12 <span style="color:#ae81ff">08</span>:59:36 7f800a664760 InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option in$
+  odb_use_sys_malloc and with the InnoDB<span style="color:#e6db74">&#39;s internal memory allocator.
+</span><span style="color:#e6db74">  innodb_open_files should not be greater than the open_files_limit.
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: The InnoDB memory heap is disabled
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: GCC builtin __sync_synchronize() is used for memory barrier
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Compressed tables use zlib 1.2.3
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Using Linux native AIO
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Using SSE crc32 instructions
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Initializing buffer pool, size = 512.0M
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Completed initialization of buffer pool
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: The first specified data file /home/mysql/mysql3306/ibdata1 did not exist: a new database to be created!
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Setting file /home/mysql/mysql3306/ibdata1 size to 128 MB
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Database physically writes the file full: wait...
+</span><span style="color:#e6db74">  InnoDB: Progress in MB: 100
+</span><span style="color:#e6db74">  2016-12-12  8:59:36 140187907016544 [Note] InnoDB: Setting log file /home/mysql/mysql3306/ib_logfile101 size to 1000 MB
+</span><span style="color:#e6db74">  InnoDB: Progress in MB: 100 200 300 400 500 600 700 800 900 1000
+</span><span style="color:#e6db74">  2016-12-12  8:59:38 140187907016544 [Note] InnoDB: Setting log file /home/mysql/mysql3306/ib_logfile1 size to 1000 MB
+</span><span style="color:#e6db74">  InnoDB: Progress in MB: 100 200 300 400 500 600 700 800 900 1000
+</span><span style="color:#e6db74">  2016-12-12  8:59:39 140187907016544 [Note] InnoDB: Setting log file /home/mysql/mysql3306/ib_logfile2 size to 1000 MB
+</span><span style="color:#e6db74">  InnoDB: Progress in MB: 100 200 300 400 500 600 700 800 900 1000
+</span><span style="color:#e6db74">  2016-12-12  8:59:40 140187907016544 [Note] InnoDB: Setting log file /home/mysql/mysql3306/ib_logfile3 size to 1000 MB
+</span><span style="color:#e6db74">  InnoDB: Progress in MB: 100 200 300 400 500 600 700 8002016-12-12 08:59:41 7f800a664760 InnoDB: Error: Write to file /home/mysql/mysql3306/ib_logfile3 failed at offset 894435
+</span><span style="color:#e6db74">  328.
+</span><span style="color:#e6db74">  InnoDB: 1048576 bytes should have been written, only 126976 were written.
+</span><span style="color:#e6db74">  InnoDB: Operating system error number 28.
+</span><span style="color:#e6db74">  InnoDB: Check that your OS and file system support files of this size.
+</span><span style="color:#e6db74">  InnoDB: Check also that the disk is not full or a disk quota exceeded.
+</span><span style="color:#e6db74">  InnoDB: Error number 28 means &#39;</span>No space left on device<span style="color:#e6db74">&#39;.
+</span><span style="color:#e6db74">  InnoDB: Some operating system error numbers are described at
+</span><span style="color:#e6db74">  InnoDB: http://dev.mysql.com/doc/refman/5.6/en/operating-system-error-codes.html
+</span><span style="color:#e6db74">  2016-12-12  8:59:41 140187907016544 [ERROR] InnoDB: Cannot set log file /home/mysql/mysql3306/ib_logfile3 to size 1000 MB
+</span><span style="color:#e6db74">  2016-12-12  8:59:41 140187907016544 [ERROR] Plugin &#39;</span>InnoDB<span style="color:#e6db74">&#39; init function returned error.
+</span><span style="color:#e6db74">  2016-12-12  8:59:41 140187907016544 [ERROR] Plugin &#39;</span>InnoDB<span style="color:#e6db74">&#39; registration as a STORAGE ENGINE failed.
+</span><span style="color:#e6db74">  2016-12-12  8:59:41 140187907016544 [ERROR] Unknown/unsupported storage engine: InnoDB
+</span><span style="color:#e6db74">  2016-12-12  8:59:41 140187907016544 [ERROR] Aborting
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">  2016-12-12  8:59:41 140186063206144 [Warning] mysqld: Disk is full writing &#39;</span>/home/mysql/mysql3306/aria_log.00000001<span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#f92672">(</span>Errcode: <span style="color:#ae81ff">28</span> <span style="color:#e6db74">&#34;No space left on device&#34;</span><span style="color:#f92672">)</span>. Waiting <span style="color:#66d9ef">for</span> some
+  one to free space... <span style="color:#f92672">(</span>Expect up to <span style="color:#ae81ff">60</span> secs delay <span style="color:#66d9ef">for</span> server to <span style="color:#66d9ef">continue</span> after freeing disk space<span style="color:#f92672">)</span>
+  <span style="color:#ae81ff">2016</span>-12-12  <span style="color:#ae81ff">8</span>:59:41 <span style="color:#ae81ff">140186063206144</span> <span style="color:#f92672">[</span>Warning<span style="color:#f92672">]</span> mysqld: Retry in <span style="color:#ae81ff">60</span> secs. Message reprinted in <span style="color:#ae81ff">600</span> secs</code></pre></div>
+</pre>
+<p>
+修改 /etc/my.cnf
+改小：innodb_log_file_size=128M
+</p>
+<p>
+删除 /home/myql/mysql3306 目录后重新初始化目录，并重新执行 mysql_install_db 命令
+</p>
+<h3 id="headline-12">
+遇到问题 2：
+</h3>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  $ mysql_install_db --basedir<span style="color:#f92672">=</span>/opt/mariadb/ --defaults-file<span style="color:#f92672">=</span>/etc/my.cnf
 
-<p>删除 /home/myql/mysql3306 目录后重新初始化目录，并重新执行 mysql_install_db 命令</p>
-
-<h3 id="遇到问题-2">遇到问题 2：</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  $ mysql_install_db --basedir<span class="o">=</span>/opt/mariadb/ --defaults-file<span class="o">=</span>/etc/my.cnf
-
-  WARNING: The host <span class="s1">&#39;vagrant-centos64.vagrantup.com&#39;</span> could not be looked up with resolveip.
-  This probably means that your libc libraries are not <span class="m">100</span> % compatible
+  WARNING: The host <span style="color:#e6db74">&#39;vagrant-centos64.vagrantup.com&#39;</span> could not be looked up with resolveip.
+  This probably means that your libc libraries are not <span style="color:#ae81ff">100</span> % compatible
   with this binary MariaDB version. The MariaDB daemon, mysqld, should work
   normally with the exception that host name resolving will not work.
   This means that you should use IP addresses instead of hostnames
-  when specifying MariaDB privileges !</code></pre></td></tr></table>
-</div>
-</div>
-<p><code>vagrant-centos64.vagrantup.com</code> 是本机的 hostname，可以通过 <code>hostname</code> 命令查看当前主机名
-修改 /etc/hosts</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  <span class="c1"># vi /etc/hosts</span>
+  when specifying MariaDB privileges !</code></pre></div>
+</pre>
+<p>
+<code class="verbatim">vagrant-centos64.vagrantup.com</code> 是本机的 hostname，可以通过 <code class="verbatim">hostname</code> 命令查看当前主机名
+修改 /etc/hosts
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  <span style="color:#75715e"># vi /etc/hosts</span>
 
-  <span class="c1"># 添加以下内容</span>
-  <span class="m">127</span>.0.0.1 vagrant-centos64.vagrantup.com</code></pre></td></tr></table>
-</div>
-</div>
-<h3 id="遇到问题-3">遇到问题 3：</h3>
-
-<p>使用服务方式和 mysqld_safe 方式启动，均不成功。并且没有错误日志：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  $ /opt/mariadb/bin/mysqld_safe --datadir<span class="o">=</span><span class="s1">&#39;/home/mysql/mysql3306&#39;</span> --default-files<span class="o">=</span><span class="s1">&#39;/etc/my.cnf&#39;</span>
-  <span class="m">161213</span> <span class="m">02</span>:40:33 mysqld_safe Logging to <span class="s1">&#39;/home/mysql/mysql3306/mysql3306.err&#39;</span>.
+  <span style="color:#75715e"># 添加以下内容</span>
+  <span style="color:#ae81ff">127</span>.0.0.1 vagrant-centos64.vagrantup.com</code></pre></div>
+</pre>
+<h3 id="headline-13">
+遇到问题 3：
+</h3>
+<p>
+使用服务方式和 mysqld_safe 方式启动，均不成功。并且没有错误日志：
+</p>
+<pre class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  $ /opt/mariadb/bin/mysqld_safe --datadir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/home/mysql/mysql3306&#39;</span> --default-files<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/etc/my.cnf&#39;</span>
+  <span style="color:#ae81ff">161213</span> <span style="color:#ae81ff">02</span>:40:33 mysqld_safe Logging to <span style="color:#e6db74">&#39;/home/mysql/mysql3306/mysql3306.err&#39;</span>.
 
   $ service mysqld start
-  Starting MySQL.161213 <span class="m">02</span>:52:34 mysqld_safe Logging to <span class="s1">&#39;/home/mysql/mysql3306/error3306.log&#39;</span>.
-   ERROR!</code></pre></td></tr></table>
-</div>
-</div>
-<p>因为这两个都是 mysqld_safe 方式启动的，怀疑是 my.cnf 里面 <code>[mysqld_safe]</code> 节点配置错误，遂检查 my.cnf 配置文件，发现 <code>[mysqld_safe]</code> 节点下的 <code>ledir</code> 配置的是 <code>ledir=/home/mysql/mysql3306</code> ，查看 MySQL 官方文档：<a href="http://dev.mysql.com/doc/refman/5.7/en/mysqld-safe.html" title="5.3.2 mysqld_safe — MySQL Server Startup Script">5.3.2 mysqld_safe — MySQL Server Startup Script</a>，此参数需要配置的是指向 mysqld 程序的目录路径，使用该选项来显式表示服务器位置。故此，修改为 <code>ledir=/opt/mariadb/bin</code> 。重启服务成功。</p>
+  Starting MySQL.161213 <span style="color:#ae81ff">02</span>:52:34 mysqld_safe Logging to <span style="color:#e6db74">&#39;/home/mysql/mysql3306/error3306.log&#39;</span>.
+   ERROR!</code></pre></div>
+</pre>
+<p>
+因为这两个都是 mysqld_safe 方式启动的，怀疑是 my.cnf 里面 <code class="verbatim">[mysqld_safe]</code> 节点配置错误，遂检查 my.cnf 配置文件，发现 <code class="verbatim">[mysqld_safe]</code> 节点下的 <code class="verbatim">ledir</code> 配置的是 <code class="verbatim">ledir=/home/mysql/mysql3306</code> ，查看 MySQL 官方文档：<a href="http://dev.mysql.com/doc/refman/5.7/en/mysqld-safe.html">5.3.2 mysqld_safe — MySQL Server Startup Script</a>，此参数需要配置的是指向 mysqld 程序的目录路径，使用该选项来显式表示服务器位置。故此，修改为 <code class="verbatim">ledir=/opt/mariadb/bin</code> 。重启服务成功。
+</p>
 
-    </div>
-
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">ifrenzyc</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-        2017-11-17
-        
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
-  </p>
-</div>
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/mariadb/">mariadb</a>
-          </div>
-      <nav class="post-nav">
-        <a class="prev" href="/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">使用 Hugo &#43; Orgmode 构建博客</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/mysql-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
-            <span class="next-text nav-default">MySQL 安装部署</span>
-            <span class="next-text nav-mobile">下一篇</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-  
-  
 
   
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:ifrenzyc@gmail.com" class="iconfont icon-email" title="email"></a>
-      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
-      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
-      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
-      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
-      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
-      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
-      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
-      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
-      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
-      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
-      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
-      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
-      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
-  <a href="https://ifrenzyc.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    主题 - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2017 - 
-    2019
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">&copy; Copyright 2017 Yang Chuang</span>
-  </span>
-</div>
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://ifrenzyc.github.io/post/mysql-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://ifrenzyc.github.io/post/mysql-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">MySQL 安装部署</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/">使用 Hugo &#43; Orgmode 构建博客</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
   
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
 
+</div>
 
+</div>
+</div>
+<script src="https://ifrenzyc.github.io/js/ui.js"></script>
 
 
 
@@ -1923,3 +1254,4 @@
 
 </body>
 </html>
+

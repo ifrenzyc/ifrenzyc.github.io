@@ -18,7 +18,7 @@
       <pubDate>Mon, 05 Jun 2017 10:12:34 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</guid>
-      <description>PlantUML 的使用依赖与 Java 环境，因此需要在系统上先安装好 Java 环境。 下载 PlantUML jar：PlantUML compiled Jar。 plantuml-mode：skuro/pla</description>
+      <description>PlantUML 的使用依赖与 Java 环境，因此需要在系统上先安装好 Java 环境。    下载 PlantUML jar：PlantUML compiled Jar。    plantuml-mode：skuro/plantuml-mode - GitHub Emacs 配置     需要依赖 Java 环境及 plantuml.jar（下载）。 (setq plantuml-java-args (expand-file-name &amp;#34;~/.emacs.d/bin/plantuml.jar&amp;#34;)) (use-package plantuml-mode :ensure t :config ;; Enable plantuml-mode for PlantUML files (add-to-list &amp;#39;auto-mode-alist &amp;#39;(&amp;#34;\\.plantuml\\&amp;#39;&amp;#34; . plantuml-mode)) ;; Enable plantuml-mode within an org-mode document (add-to-list &amp;#39;org-src-lang-modes &amp;#39;(&amp;#34;plantuml&amp;#34; . plantuml)) ;; Use fundamental mode when editing plantuml blocks with C-c &amp;#39; (add-to-list &amp;#39;org-src-lang-modes (quote (&amp;#34;plantuml&amp;#34; .</description>
     </item>
     
   </channel>

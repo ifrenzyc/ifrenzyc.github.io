@@ -18,7 +18,7 @@
       <pubDate>Tue, 27 Jun 2017 10:12:34 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E9%80%9A%E8%BF%87-zabbix-%E5%AE%9E%E7%8E%B0-logstash-%E7%9A%84%E7%9B%91%E6%8E%A7/</guid>
-      <description>参考：监控方案 由于 Logstash 的 Pipeline 模式，通过 filter metrics 插件和 output zabbix 插件即可实现对 Logstash 处理 TPS 的监控。 Logstash Pipeline 模型 由于 logstash-output-zabbix 插件不是 Logstash 的官方插件，因此使用前需要手动先安装该</description>
+      <description>参考：监控方案  由于 Logstash 的 Pipeline 模式，通过 filter metrics 插件和 output zabbix 插件即可实现对 Logstash 处理 TPS 的监控。  Logstash Pipeline 模型  由于 logstash-output-zabbix 插件不是 Logstash 的官方插件，因此使用前需要手动先安装该插件，安装方式非常简单[参考：zabbix|Logstash ]： $ bin/logstash-plugin install logstash-output-zabbix   配置 Zabbix 的数据采集：    配置新的主机名为 “logstash-indexer-1”       配置采集项     修改 logstash 的配置文件，增加 metrics filter 和 zabbix output： input { ... } filter { ... metrics { meter =&amp;gt; &amp;#34;events&amp;#34; # 统计每一个经过 filter 的事件 add_tag =&amp;gt; &amp;#34;metric&amp;#34; add_field =&amp;gt; {&amp;#34;[@metadata][zabbix_key]&amp;#34; =&amp;gt; &amp;#34;logstash_events&amp;#34;} # zabbix item 的 key，这个要和 zabbix 的配置一致 add_field =&amp;gt; { &amp;#34;[@metadata][zabbix_host]&amp;#34; =&amp;gt; &amp;#34;logstash-indexer-1&amp;#34; } # zabbix 写入的主机 flush_interval =&amp;gt; 10 # 每隔 10s 写一次 } } output { .</description>
     </item>
     
   </channel>

@@ -18,7 +18,7 @@
       <pubDate>Sun, 04 Jun 2017 08:36:32 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hexo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>使用 Hexo 搭建一个个人博客的过程非常简单，参考官方文档即可：GitHub。 基本设置 使用 orgmode 来编辑文档 感谢 CodeFalling 插件：CodeFalling/hexo-</description>
+      <description>使用 Hexo 搭建一个个人博客的过程非常简单，参考官方文档即可：GitHub。 基本设置  使用 orgmode 来编辑文档   感谢 CodeFalling 插件：CodeFalling/hexo-renderer-org - GitHub 禁止 hexo-renderer-org 生成 toc   方法一：  在每篇文章前面加上 #+OPTIONS: toc:nil 。  方法二：  统一设置。  参考：CodeFalling/hexo-renderer-org - GitHub。 hexo-asset-image   配合这个插件使用： https://github.com/CodeFalling/hexo-asset-image 这个插件值得使用    在 hexo 中无痛使用本地图片    hexo 中完美插入本地图片 其他解决方案     图床 使用 Emacs 来生成博客静态页面及启停 Hexo   参考：使用 Hexo 和 emacs-Org 来写博客 RSS 插件   支持 RSS： $ npm install hexo-generator-feed --save   启动服务器，用浏览器打开 http://localhost:4000/atom.</description>
     </item>
     
   </channel>

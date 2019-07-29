@@ -18,7 +18,7 @@
       <pubDate>Thu, 16 Nov 2017 17:39:34 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/mysql-streaming-%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E7%BA%A6%E6%9D%9F/</guid>
-      <description>在 Oracle 下，开发人员开发 Java 连接数据库进行超大结果集的查询后处理的程序时，可以通过设置游标进行小批量、迭代多次获取数据记录，避免程序出现 OOM 异常。 而</description>
+      <description>在 Oracle 下，开发人员开发 Java 连接数据库进行超大结果集的查询后处理的程序时，可以通过设置游标进行小批量、迭代多次获取数据记录，避免程序出现 OOM 异常。  而 MySQL 本身并不提供游标功能，而是通过 Connector/J 客户端阻塞式逐行读取数据记录交给业务进行处理。这种“流式（Streaming）”读取看似是很快很便利方式，实际是对应用场景提出了很高的约束，使用不当容易对照成数据库链接长期占用，链接超时，消耗数据库资源等问题。  在 MySQL 中查询超大结果集时，由于 MySQL JDBC 的 ResultSet 默认是接收完全部数据后再交由应用程序进行处理的。对于数据量很大的查询（如报表统计）、有限的 JVM 内存等程序，很容易就照成应用程序 OOM 异常（ java.lang.OutOfMemoryError: Java heap space ）。对于这个错误解决起来也很简单。  MySQL JDBC 支持客户端的流方式（Streaming）读取数据，也叫 Client Side Cursor。即应用程序一边从数据库拉取数据，每获取到一条数据后就可以立即丢给业务逻辑程序处理。代码实现也很简单：  只要在初始化 Statement 的时候，设置这几个参数即可： ResultSet.TYPE_FORWARD_ONLY 、 ResultSet.CONCUR_READ_ONLY 、 Integer.MIN_VALUE 。 preparedStatement = connection.prepareStatement(formatSql, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY); preparedStatement.setFetchSize(Integer.MIN_VALUE);   setFetchSize=Integer.MIN_VALUE 这是一个 magic number，而不是指定每次读取多少数据。不能改成其他值。具体参考[官方文档](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-implementation-notes.html#ResultSet)。  而实际上，在高版本的 JDBC 驱动， ResultSet.TYPE_FORWARD_ONLY 、 ResultSet.CONCUR_READ_ONLY 这两个参数是 Statement 里面默认设置的（这个看 JDBC Driver 的源码可以了解到，文档上是没写的，这里是个坑），所以实际我们只需要设置 preparedStatement.</description>
     </item>
     
   </channel>
