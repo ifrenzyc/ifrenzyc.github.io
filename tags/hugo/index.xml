@@ -18,24 +18,7 @@
       <pubDate>Fri, 29 Dec 2017 11:49:25 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>使用 Hugo 搭建自己的静态博客。
-Hugo 是 spf13 大神基于 Golang 开发的静态网站生成器。GitHub
-本地安装和使用 安装 brew 里面已经有这个包了，直接用 brew 安装即可。
-$ brew install hugo  生成博客 完成安装后，第一步是生成博客目录。
-$ hugo new site /path/to/site  /path/to/site 即博客在本地磁盘存放的路径。站点目录结构：
- archetypes/ content/ layouts/ static/ config.toml  创建文章 通过 hugo 命令可创建出我们的博客内容文件。
-$ hugo new post/helloworld.md  创建第一篇文章，放到 post 目录。
-运行 Hugo 在博客根目录执行 Hugo 命令启动 web 服务：
-$ hugo server --theme=hyde --buildDrafts   --theme 指定主题 --buildDrafts 指定加载 draft=true 的文章  启动后，即可访问：http://127.</description>
-    </item>
-    
-    <item>
-      <title>使用 Hugo &#43; Orgmode 构建博客</title>
-      <link>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Fri, 29 Dec 2017 11:49:25 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>使用 Hugo 搭建自己的静态博客。  Hugo 是 spf13 大神基于 Golang 开发的静态网站生成器。GitHub 本地安装和使用  安装   brew 里面已经有这个包了，直接用 brew 安装即可。 $ brew install hugo  生成博客   完成安装后，第一步是生成博客目录。 $ hugo new site /path/to/site   /path/to/site 即博客在本地磁盘存放的路径。 站点目录结构：    archetypes/    content/    layouts/    static/    config.toml   创建文章   通过 hugo 命令可创建出我们的博客内容文件。 $ hugo new post/helloworld.</description>
+      <description>使用 Hugo 搭建自己的静态博客。 Hugo 是 spf13 大神基于 Golang 开发的静态网站生成器。GitHub 本地安装和使用 安装 brew 里面已经有这个包了，直接用 brew 安装即可。 1 $ brew</description>
     </item>
     
   </channel>

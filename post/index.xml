@@ -18,7 +18,7 @@
       <pubDate>Tue, 23 Jul 2019 00:10:55 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E6%88%91%E5%9C%A8-org-mode-%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87%E7%9A%84%E6%B5%81%E7%A8%8B/</guid>
-      <description> 我在日常中采用 Org-mode 记录各种文档笔记，经常需要插入各种图片。默认情况下 Emacs 不支持直接粘贴或者拖拽图片进入 org 文件上。  我的文档添加图片主要有两种方式：    方式一： 通过截图软件（如：Mac 下的 “QQ 截图”、Snipaste）截图后通过系统剪切板粘贴到 orgmode 文档上。    方式二： 在本地目录上有已经保存好的图片，需要拖拽到 orgmode 文档上。   </description>
+      <description>我在日常中采用 Org-mode 记录各种文档笔记，经常需要插入各种图片。默认情况下 Emacs 不支持直接粘贴或者拖拽图片进入 org 文件上。 我的文档添加图片主要有两种方式：</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Wed, 17 Apr 2019 18:19:43 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</guid>
-      <description>  近期在做系统版本发布相关的工作，正好对灰度发布等相关的概念做了一些了解。因此将这些概念相关的一些知识整理起来，方便对比和理解。    灰度发布    金丝雀发布    蓝绿发布    红黑发布    滚动发布   灰度发布  金丝雀发布  蓝绿发布  红黑发布     关于蓝绿发布和红黑发布的对比。 滚动发布/平滑升级  </description>
+      <description>近期在做系统版本发布相关的工作，正好对灰度发布等相关的概念做了一些了解。因此将这些概念相关的一些知识整理起来，方便对比和理解。 灰度发布 金丝雀</description>
     </item>
     
     <item>
@@ -36,24 +36,7 @@
       <pubDate>Fri, 29 Dec 2017 11:49:25 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>使用 Hugo 搭建自己的静态博客。
-Hugo 是 spf13 大神基于 Golang 开发的静态网站生成器。GitHub
-本地安装和使用 安装 brew 里面已经有这个包了，直接用 brew 安装即可。
-$ brew install hugo  生成博客 完成安装后，第一步是生成博客目录。
-$ hugo new site /path/to/site  /path/to/site 即博客在本地磁盘存放的路径。站点目录结构：
- archetypes/ content/ layouts/ static/ config.toml  创建文章 通过 hugo 命令可创建出我们的博客内容文件。
-$ hugo new post/helloworld.md  创建第一篇文章，放到 post 目录。
-运行 Hugo 在博客根目录执行 Hugo 命令启动 web 服务：
-$ hugo server --theme=hyde --buildDrafts   --theme 指定主题 --buildDrafts 指定加载 draft=true 的文章  启动后，即可访问：http://127.</description>
-    </item>
-    
-    <item>
-      <title>使用 Hugo &#43; Orgmode 构建博客</title>
-      <link>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Fri, 29 Dec 2017 11:49:25 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>使用 Hugo 搭建自己的静态博客。  Hugo 是 spf13 大神基于 Golang 开发的静态网站生成器。GitHub 本地安装和使用  安装   brew 里面已经有这个包了，直接用 brew 安装即可。 $ brew install hugo  生成博客   完成安装后，第一步是生成博客目录。 $ hugo new site /path/to/site   /path/to/site 即博客在本地磁盘存放的路径。 站点目录结构：    archetypes/    content/    layouts/    static/    config.toml   创建文章   通过 hugo 命令可创建出我们的博客内容文件。 $ hugo new post/helloworld.</description>
+      <description>使用 Hugo 搭建自己的静态博客。 Hugo 是 spf13 大神基于 Golang 开发的静态网站生成器。GitHub 本地安装和使用 安装 brew 里面已经有这个包了，直接用 brew 安装即可。 1 $ brew</description>
     </item>
     
     <item>
@@ -62,7 +45,7 @@ $ hugo server --theme=hyde --buildDrafts   --theme 指定主题 --buildDrafts �
       <pubDate>Fri, 17 Nov 2017 20:19:34 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/mariadb-%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</guid>
-      <description>MySQL 的版本选择及安装部署   由于 MariaDB 是基于 MySQL 分支开发的，对一些 bug 修复和特性支持做得更好一些，本文介绍 MariaDB 的简易安装。 版本选取     MySQL: 5.7.x: 5.7.16(current)    MariaDB: 10.1.x: 10.1.19(current) 推荐！    MariaDB 10.1 版本是基于 MySQL 5.7 版本开发的    MySQL JDBC: 5.1.40    为什么是选取 MySQL 5.7.x 和 MariaDB 10.1.x 版本？  目前 MySQL 5.7.x 已经是一个可以稳定使用的版本，且功能较完善，性能相对以前版本有较大的提升。而，MariaDB 10.1.x 版本是基于 MySQL 5.7.x 分支改造的，两者基本可以互相替换。而原来的 MySQL 5.6 版本和 MariaDB 10.0 版本是一个过渡版本，没有比较好的解决性能问题。因此不推荐这个版本。  以下的安装过程均是基于 MariaDB 10.</description>
+      <description>MySQL 的版本选择及安装部署 由于 MariaDB 是基于 MySQL 分支开发的，对一些 bug 修复和特性支持做得更好一些，本文介绍 MariaDB 的简易安装。 版本选取 MySQL: 5.7.x: 5.7.16(current) MariaDB: 10.1.x: 10.1.19(current) 推荐！ MariaDB 10.1 版本</description>
     </item>
     
     <item>
@@ -71,7 +54,7 @@ $ hugo server --theme=hyde --buildDrafts   --theme 指定主题 --buildDrafts �
       <pubDate>Fri, 17 Nov 2017 15:49:34 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/mysql-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</guid>
-      <description>依赖     MySQL 版本 ：5.7.19    CenOS 版本 ：CentOS-7-x86_64-1704    系统用户 ：user9（文中所有涉及到的 user9 都是指代系统用户名，需要替换成你实际部署的用户名）   获取 MySQL 二机制程序   MySQL 官网提供了打包好的二进制程序包，只要下载下来、解压、配置、启动即可完成 MySQL 的部署。相当方便。下载地址：Download MySQL Community Server。  我们这里选择下载版本为：5.7.19 的程序包： mysql-5.7.19-linux-glibc2.12-x86_64.tar.gz 。 部署程序  上传程序包到服务器   &amp;lt;这里自己选择熟悉的工具上传。&amp;gt;  这里假设上传程序包到 ~/apps 目录下， ~/apps 需要自己先手工创建。 上传完成后，查看上传的结果： $ cd ~/apps $ ls -ahl total 611M drwxrwxr-x. 4 user9 user9 129 Sep 5 07:04 .</description>
+      <description>依赖 MySQL 版本 ：5.7.19 CenOS 版本 ：CentOS-7-x86_64-1704 系统用户 ：user9（文中所有涉及到的 user9 都是指代系统用户名，需要替换</description>
     </item>
     
     <item>
@@ -80,7 +63,7 @@ $ hugo server --theme=hyde --buildDrafts   --theme 指定主题 --buildDrafts �
       <pubDate>Thu, 16 Nov 2017 17:39:34 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/mysql-streaming-%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E7%BA%A6%E6%9D%9F/</guid>
-      <description>在 Oracle 下，开发人员开发 Java 连接数据库进行超大结果集的查询后处理的程序时，可以通过设置游标进行小批量、迭代多次获取数据记录，避免程序出现 OOM 异常。  而 MySQL 本身并不提供游标功能，而是通过 Connector/J 客户端阻塞式逐行读取数据记录交给业务进行处理。这种“流式（Streaming）”读取看似是很快很便利方式，实际是对应用场景提出了很高的约束，使用不当容易对照成数据库链接长期占用，链接超时，消耗数据库资源等问题。  在 MySQL 中查询超大结果集时，由于 MySQL JDBC 的 ResultSet 默认是接收完全部数据后再交由应用程序进行处理的。对于数据量很大的查询（如报表统计）、有限的 JVM 内存等程序，很容易就照成应用程序 OOM 异常（ java.lang.OutOfMemoryError: Java heap space ）。对于这个错误解决起来也很简单。  MySQL JDBC 支持客户端的流方式（Streaming）读取数据，也叫 Client Side Cursor。即应用程序一边从数据库拉取数据，每获取到一条数据后就可以立即丢给业务逻辑程序处理。代码实现也很简单：  只要在初始化 Statement 的时候，设置这几个参数即可： ResultSet.TYPE_FORWARD_ONLY 、 ResultSet.CONCUR_READ_ONLY 、 Integer.MIN_VALUE 。 preparedStatement = connection.prepareStatement(formatSql, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY); preparedStatement.setFetchSize(Integer.MIN_VALUE);   setFetchSize=Integer.MIN_VALUE 这是一个 magic number，而不是指定每次读取多少数据。不能改成其他值。具体参考[官方文档](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-implementation-notes.html#ResultSet)。  而实际上，在高版本的 JDBC 驱动， ResultSet.TYPE_FORWARD_ONLY 、 ResultSet.CONCUR_READ_ONLY 这两个参数是 Statement 里面默认设置的（这个看 JDBC Driver 的源码可以了解到，文档上是没写的，这里是个坑），所以实际我们只需要设置 preparedStatement.</description>
+      <description>在 Oracle 下，开发人员开发 Java 连接数据库进行超大结果集的查询后处理的程序时，可以通过设置游标进行小批量、迭代多次获取数据记录，避免程序出现 OOM 异常。 而</description>
     </item>
     
     <item>
@@ -89,7 +72,7 @@ $ hugo server --theme=hyde --buildDrafts   --theme 指定主题 --buildDrafts �
       <pubDate>Tue, 27 Jun 2017 10:12:34 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E9%80%9A%E8%BF%87-zabbix-%E5%AE%9E%E7%8E%B0-logstash-%E7%9A%84%E7%9B%91%E6%8E%A7/</guid>
-      <description>参考：监控方案  由于 Logstash 的 Pipeline 模式，通过 filter metrics 插件和 output zabbix 插件即可实现对 Logstash 处理 TPS 的监控。  Logstash Pipeline 模型  由于 logstash-output-zabbix 插件不是 Logstash 的官方插件，因此使用前需要手动先安装该插件，安装方式非常简单[参考：zabbix|Logstash ]： $ bin/logstash-plugin install logstash-output-zabbix   配置 Zabbix 的数据采集：    配置新的主机名为 “logstash-indexer-1”       配置采集项     修改 logstash 的配置文件，增加 metrics filter 和 zabbix output： input { ... } filter { ... metrics { meter =&amp;gt; &amp;#34;events&amp;#34; # 统计每一个经过 filter 的事件 add_tag =&amp;gt; &amp;#34;metric&amp;#34; add_field =&amp;gt; {&amp;#34;[@metadata][zabbix_key]&amp;#34; =&amp;gt; &amp;#34;logstash_events&amp;#34;} # zabbix item 的 key，这个要和 zabbix 的配置一致 add_field =&amp;gt; { &amp;#34;[@metadata][zabbix_host]&amp;#34; =&amp;gt; &amp;#34;logstash-indexer-1&amp;#34; } # zabbix 写入的主机 flush_interval =&amp;gt; 10 # 每隔 10s 写一次 } } output { .</description>
+      <description>参考：监控方案 由于 Logstash 的 Pipeline 模式，通过 filter metrics 插件和 output zabbix 插件即可实现对 Logstash 处理 TPS 的监控。 Logstash Pipeline 模型 由于 logstash-output-zabbix 插件不是 Logstash 的官方插件，因此使用前需要手动先安装该</description>
     </item>
     
     <item>
@@ -98,7 +81,7 @@ $ hugo server --theme=hyde --buildDrafts   --theme 指定主题 --buildDrafts �
       <pubDate>Mon, 05 Jun 2017 10:12:34 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</guid>
-      <description>PlantUML 的使用依赖与 Java 环境，因此需要在系统上先安装好 Java 环境。    下载 PlantUML jar：PlantUML compiled Jar。    plantuml-mode：skuro/plantuml-mode - GitHub Emacs 配置     需要依赖 Java 环境及 plantuml.jar（下载）。 (setq plantuml-java-args (expand-file-name &amp;#34;~/.emacs.d/bin/plantuml.jar&amp;#34;)) (use-package plantuml-mode :ensure t :config ;; Enable plantuml-mode for PlantUML files (add-to-list &amp;#39;auto-mode-alist &amp;#39;(&amp;#34;\\.plantuml\\&amp;#39;&amp;#34; . plantuml-mode)) ;; Enable plantuml-mode within an org-mode document (add-to-list &amp;#39;org-src-lang-modes &amp;#39;(&amp;#34;plantuml&amp;#34; . plantuml)) ;; Use fundamental mode when editing plantuml blocks with C-c &amp;#39; (add-to-list &amp;#39;org-src-lang-modes (quote (&amp;#34;plantuml&amp;#34; .</description>
+      <description>PlantUML 的使用依赖与 Java 环境，因此需要在系统上先安装好 Java 环境。 下载 PlantUML jar：PlantUML compiled Jar。 plantuml-mode：skuro/pla</description>
     </item>
     
     <item>
@@ -107,7 +90,7 @@ $ hugo server --theme=hyde --buildDrafts   --theme 指定主题 --buildDrafts �
       <pubDate>Sun, 04 Jun 2017 08:36:32 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E4%BD%BF%E7%94%A8-hexo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>使用 Hexo 搭建一个个人博客的过程非常简单，参考官方文档即可：GitHub。 基本设置  使用 orgmode 来编辑文档   感谢 CodeFalling 插件：CodeFalling/hexo-renderer-org - GitHub 禁止 hexo-renderer-org 生成 toc   方法一：  在每篇文章前面加上 #+OPTIONS: toc:nil 。  方法二：  统一设置。  参考：CodeFalling/hexo-renderer-org - GitHub。 hexo-asset-image   配合这个插件使用： https://github.com/CodeFalling/hexo-asset-image 这个插件值得使用    在 hexo 中无痛使用本地图片    hexo 中完美插入本地图片 其他解决方案     图床 使用 Emacs 来生成博客静态页面及启停 Hexo   参考：使用 Hexo 和 emacs-Org 来写博客 RSS 插件   支持 RSS： $ npm install hexo-generator-feed --save   启动服务器，用浏览器打开 http://localhost:4000/atom.</description>
+      <description>使用 Hexo 搭建一个个人博客的过程非常简单，参考官方文档即可：GitHub。 基本设置 使用 orgmode 来编辑文档 感谢 CodeFalling 插件：CodeFalling/hexo-</description>
     </item>
     
   </channel>

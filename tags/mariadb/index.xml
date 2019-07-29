@@ -18,7 +18,7 @@
       <pubDate>Fri, 17 Nov 2017 20:19:34 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/mariadb-%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</guid>
-      <description>MySQL 的版本选择及安装部署   由于 MariaDB 是基于 MySQL 分支开发的，对一些 bug 修复和特性支持做得更好一些，本文介绍 MariaDB 的简易安装。 版本选取     MySQL: 5.7.x: 5.7.16(current)    MariaDB: 10.1.x: 10.1.19(current) 推荐！    MariaDB 10.1 版本是基于 MySQL 5.7 版本开发的    MySQL JDBC: 5.1.40    为什么是选取 MySQL 5.7.x 和 MariaDB 10.1.x 版本？  目前 MySQL 5.7.x 已经是一个可以稳定使用的版本，且功能较完善，性能相对以前版本有较大的提升。而，MariaDB 10.1.x 版本是基于 MySQL 5.7.x 分支改造的，两者基本可以互相替换。而原来的 MySQL 5.6 版本和 MariaDB 10.0 版本是一个过渡版本，没有比较好的解决性能问题。因此不推荐这个版本。  以下的安装过程均是基于 MariaDB 10.</description>
+      <description>MySQL 的版本选择及安装部署 由于 MariaDB 是基于 MySQL 分支开发的，对一些 bug 修复和特性支持做得更好一些，本文介绍 MariaDB 的简易安装。 版本选取 MySQL: 5.7.x: 5.7.16(current) MariaDB: 10.1.x: 10.1.19(current) 推荐！ MariaDB 10.1 版本</description>
     </item>
     
   </channel>

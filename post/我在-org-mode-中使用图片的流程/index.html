@@ -1,224 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-cn">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.56.0" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>我在 Org Mode 中使用图片的流程 - ITSYC</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-  <title>我在 Org Mode 中使用图片的流程 &middot; ITSYC</title>
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
-  <!--<![endif]-->
 
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="/css/side-menu.css">
-  <!--<![endif]-->
+<meta name="author" content="Yang Chuang" /><meta name="description" content="我在日常中采用 Org-mode 记录各种文档笔记，经常需要插入各种图片。默认情况下 Emacs 不支持直接粘贴或者拖拽图片进入 org 文件上。 我的文档添加图片主要有两种方式：" /><meta name="keywords" content="Java, Emacser" />
 
-  <link rel="stylesheet" href="/css/blackburn.css">
 
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
-  
-  
 
-  
 
-  <link rel="shortcut icon" href="https://ifrenzyc.github.io/img/favicon.ico" type="image/x-icon" />
+<meta name="generator" content="Hugo 0.57.0-DEV with even 4.0.0" />
 
-  
-  
+
+<link rel="canonical" href="https://ifrenzyc.github.io/post/%E6%88%91%E5%9C%A8-org-mode-%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87%E7%9A%84%E6%B5%81%E7%A8%8B/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="我在 Org Mode 中使用图片的流程" />
+<meta property="og:description" content="我在日常中采用 Org-mode 记录各种文档笔记，经常需要插入各种图片。默认情况下 Emacs 不支持直接粘贴或者拖拽图片进入 org 文件上。 我的文档添加图片主要有两种方式：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ifrenzyc.github.io/post/%E6%88%91%E5%9C%A8-org-mode-%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87%E7%9A%84%E6%B5%81%E7%A8%8B/" />
+<meta property="article:published_time" content="2019-07-23T00:10:55+08:00" />
+<meta property="article:modified_time" content="2019-07-23T00:10:55+08:00" />
+<meta itemprop="name" content="我在 Org Mode 中使用图片的流程">
+<meta itemprop="description" content="我在日常中采用 Org-mode 记录各种文档笔记，经常需要插入各种图片。默认情况下 Emacs 不支持直接粘贴或者拖拽图片进入 org 文件上。 我的文档添加图片主要有两种方式：">
+
+
+<meta itemprop="datePublished" content="2019-07-23T00:10:55&#43;08:00" />
+<meta itemprop="dateModified" content="2019-07-23T00:10:55&#43;08:00" />
+<meta itemprop="wordCount" content="152">
+
+
+
+<meta itemprop="keywords" content="emacs," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="我在 Org Mode 中使用图片的流程"/>
+<meta name="twitter:description" content="我在日常中采用 Org-mode 记录各种文档笔记，经常需要插入各种图片。默认情况下 Emacs 不支持直接粘贴或者拖拽图片进入 org 文件上。 我的文档添加图片主要有两种方式："/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
 
 </head>
-
-
 <body>
-<div id="layout">
-
-  
-<a href="#menu" id="menuLink" class="menu-link">
-  
-  <span></span>
-</a>
-<div id="menu">
-
-  
-
-  <div class="pure-menu">
-    <ul class="pure-menu-list">
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/categories/">Categories</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/tags/">Tags</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/archives/">Archives</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/about/">About</a>
-      
-        </li>
-      
-    </ul>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">ITSYC</a>
   </div>
-
-  <div class="pure-menu social">
-  <ul class="pure-menu-list">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
   </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">ITSYC</a>
 </div>
 
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
 
-  <div>
-  <div class="small-print">
-    <small>&copy; Copyright 2017 Yang Chuang</small>
-  </div>
-  <div class="small-print">
-    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
-    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
-  </div>
-</div>
-
-</div>
-
-
-  <div id="main">
-
-
-<div class="header">
-  <h1>我在 Org Mode 中使用图片的流程</h1>
-  <h2></h2>
-</div>
-<div class="content">
-
-  <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>23 Jul 2019, 00:10</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
     
-      <a class="post-taxonomy-tag" href="https://ifrenzyc.github.io/tags/emacs">emacs</a>
+    <header class="post-header">
+      <h1 class="post-title">我在 Org Mode 中使用图片的流程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-23 </span>
+        <div class="post-category">
+            <a href="/categories/living-in-emacs/"> Living in Emacs </a>
+            </div>
+          <span class="more-meta"> 约 152 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
     
   </div>
-  
-  
-
 </div>
-
-  <p>
+    <div class="post-content">
+      <p>
 我在日常中采用 Org-mode 记录各种文档笔记，经常需要插入各种图片。默认情况下 Emacs 不支持直接粘贴或者拖拽图片进入 org 文件上。
 </p>
 <p>
@@ -237,41 +163,107 @@
 </li>
 </ul>
 
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Yang Chuang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-07-23
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/emacs/">emacs</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/">
+            <span class="next-text nav-default">灰度发布的相关概念</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://ifrenzyc.github.io/post/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://ifrenzyc.github.io/post/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/">灰度发布的相关概念</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-  </div>
+    <script src="https://utteranc.es/client.js"
+            repo="ifrenzyc/ifrenzyc.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ifrenzyc@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/ifrenzyc" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/ifrenzyc" class="iconfont icon-github" title="github"></a>
+      <a href="http://douban.com/people/ifrenzyc" class="iconfont icon-douban" title="douban"></a>
+  <a href="https://ifrenzyc.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
 
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
 
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">&copy; Copyright 2017 Yang Chuang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
   
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
 
-</div>
 
-</div>
-</div>
-<script src="https://ifrenzyc.github.io/js/ui.js"></script>
 
 
 
@@ -280,4 +272,3 @@
 
 </body>
 </html>
-

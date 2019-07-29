@@ -18,7 +18,7 @@
       <pubDate>Tue, 23 Jul 2019 00:10:55 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E6%88%91%E5%9C%A8-org-mode-%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87%E7%9A%84%E6%B5%81%E7%A8%8B/</guid>
-      <description> 我在日常中采用 Org-mode 记录各种文档笔记，经常需要插入各种图片。默认情况下 Emacs 不支持直接粘贴或者拖拽图片进入 org 文件上。  我的文档添加图片主要有两种方式：    方式一： 通过截图软件（如：Mac 下的 “QQ 截图”、Snipaste）截图后通过系统剪切板粘贴到 orgmode 文档上。    方式二： 在本地目录上有已经保存好的图片，需要拖拽到 orgmode 文档上。   </description>
+      <description>我在日常中采用 Org-mode 记录各种文档笔记，经常需要插入各种图片。默认情况下 Emacs 不支持直接粘贴或者拖拽图片进入 org 文件上。 我的文档添加图片主要有两种方式：</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Mon, 05 Jun 2017 10:12:34 +0800</pubDate>
       
       <guid>https://ifrenzyc.github.io/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</guid>
-      <description>PlantUML 的使用依赖与 Java 环境，因此需要在系统上先安装好 Java 环境。    下载 PlantUML jar：PlantUML compiled Jar。    plantuml-mode：skuro/plantuml-mode - GitHub Emacs 配置     需要依赖 Java 环境及 plantuml.jar（下载）。 (setq plantuml-java-args (expand-file-name &amp;#34;~/.emacs.d/bin/plantuml.jar&amp;#34;)) (use-package plantuml-mode :ensure t :config ;; Enable plantuml-mode for PlantUML files (add-to-list &amp;#39;auto-mode-alist &amp;#39;(&amp;#34;\\.plantuml\\&amp;#39;&amp;#34; . plantuml-mode)) ;; Enable plantuml-mode within an org-mode document (add-to-list &amp;#39;org-src-lang-modes &amp;#39;(&amp;#34;plantuml&amp;#34; . plantuml)) ;; Use fundamental mode when editing plantuml blocks with C-c &amp;#39; (add-to-list &amp;#39;org-src-lang-modes (quote (&amp;#34;plantuml&amp;#34; .</description>
+      <description>PlantUML 的使用依赖与 Java 环境，因此需要在系统上先安装好 Java 环境。 下载 PlantUML jar：PlantUML compiled Jar。 plantuml-mode：skuro/pla</description>
     </item>
     
   </channel>
