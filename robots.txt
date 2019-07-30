@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://ifrenzyc.github.io/sitemap.xml
+Sitemap: http://itsyc.xyz/sitemap.xml

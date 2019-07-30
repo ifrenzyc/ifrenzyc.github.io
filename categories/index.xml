@@ -2,58 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ITSYC</title>
-    <link>https://ifrenzyc.github.io/categories/</link>
+    <link>http://itsyc.xyz/categories/</link>
     <description>Recent content in Categories on ITSYC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; Copyright 2017 Yang Chuang</copyright>
-    <lastBuildDate>Tue, 23 Jul 2019 00:10:55 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 29 Dec 2017 11:49:25 +0800</lastBuildDate>
     
-	<atom:link href="https://ifrenzyc.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://itsyc.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Living in Emacs</title>
-      <link>https://ifrenzyc.github.io/categories/living-in-emacs/</link>
-      <pubDate>Tue, 23 Jul 2019 00:10:55 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/categories/living-in-emacs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CI &amp; CD</title>
-      <link>https://ifrenzyc.github.io/categories/ci-cd/</link>
-      <pubDate>Wed, 17 Apr 2019 18:19:43 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/categories/ci-cd/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>折腾 Blog</title>
-      <link>https://ifrenzyc.github.io/categories/%E6%8A%98%E8%85%BE-blog/</link>
+      <link>http://itsyc.xyz/categories/%E6%8A%98%E8%85%BE-blog/</link>
       <pubDate>Fri, 29 Dec 2017 11:49:25 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/categories/%E6%8A%98%E8%85%BE-blog/</guid>
+      <guid>http://itsyc.xyz/categories/%E6%8A%98%E8%85%BE-blog/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>数据库</title>
-      <link>https://ifrenzyc.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
-      <pubDate>Fri, 17 Nov 2017 20:19:34 +0800</pubDate>
+      <title>Living in Emacs</title>
+      <link>http://itsyc.xyz/categories/living-in-emacs/</link>
+      <pubDate>Mon, 05 Jun 2017 10:12:34 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Elastic Stack</title>
-      <link>https://ifrenzyc.github.io/categories/elastic-stack/</link>
-      <pubDate>Tue, 27 Jun 2017 10:12:34 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/categories/elastic-stack/</guid>
+      <guid>http://itsyc.xyz/categories/living-in-emacs/</guid>
       <description></description>
     </item>
     

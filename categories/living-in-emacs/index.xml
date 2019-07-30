@@ -2,31 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Living in Emacs on ITSYC</title>
-    <link>https://ifrenzyc.github.io/categories/living-in-emacs/</link>
+    <link>http://itsyc.xyz/categories/living-in-emacs/</link>
     <description>Recent content in Living in Emacs on ITSYC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; Copyright 2017 Yang Chuang</copyright>
-    <lastBuildDate>Tue, 23 Jul 2019 00:10:55 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jun 2017 10:12:34 +0800</lastBuildDate>
     
-	<atom:link href="https://ifrenzyc.github.io/categories/living-in-emacs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://itsyc.xyz/categories/living-in-emacs/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>我在 Org Mode 中使用图片的流程</title>
-      <link>https://ifrenzyc.github.io/post/%E6%88%91%E5%9C%A8-org-mode-%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87%E7%9A%84%E6%B5%81%E7%A8%8B/</link>
-      <pubDate>Tue, 23 Jul 2019 00:10:55 +0800</pubDate>
-      
-      <guid>https://ifrenzyc.github.io/post/%E6%88%91%E5%9C%A8-org-mode-%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%89%87%E7%9A%84%E6%B5%81%E7%A8%8B/</guid>
-      <description>我在日常中采用 Org-mode 记录各种文档笔记，经常需要插入各种图片。默认情况下 Emacs 不支持直接粘贴或者拖拽图片进入 org 文件上。 我的文档添加图片主要有两种方式：</description>
-    </item>
     
     <item>
       <title>在 Emacs 中使用 PlantUML</title>
-      <link>https://ifrenzyc.github.io/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</link>
+      <link>http://itsyc.xyz/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</link>
       <pubDate>Mon, 05 Jun 2017 10:12:34 +0800</pubDate>
       
-      <guid>https://ifrenzyc.github.io/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</guid>
+      <guid>http://itsyc.xyz/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</guid>
       <description>PlantUML 的使用依赖与 Java 环境，因此需要在系统上先安装好 Java 环境。 下载 PlantUML jar：PlantUML compiled Jar。 plantuml-mode：skuro/pla</description>
     </item>
     
