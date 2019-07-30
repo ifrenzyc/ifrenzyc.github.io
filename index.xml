@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; Copyright 2017 Yang Chuang</copyright>
-    <lastBuildDate>Fri, 29 Dec 2017 11:49:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
     
 	<atom:link href="http://itsyc.xyz/index.xml" rel="self" type="application/rss+xml" />
     
@@ -21,24 +21,6 @@
       <description>233 Hugo is a static site engine written in Go.
 1  $ cd $HOME   It makes use of a variety of open source projects including:
  Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.</description>
-    </item>
-    
-    <item>
-      <title>使用 Hugo &#43; Orgmode 构建博客</title>
-      <link>http://itsyc.xyz/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Fri, 29 Dec 2017 11:49:25 +0800</pubDate>
-      
-      <guid>http://itsyc.xyz/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>使用 Hugo 搭建自己的静态博客。 Hugo 是 spf13 大神基于 Golang 开发的静态网站生成器。GitHub 本地安装和使用 安装 brew 里面已经有这个包了，直接用 brew 安装即可。 1 $ brew</description>
-    </item>
-    
-    <item>
-      <title>在 Emacs 中使用 PlantUML</title>
-      <link>http://itsyc.xyz/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</link>
-      <pubDate>Mon, 05 Jun 2017 10:12:34 +0800</pubDate>
-      
-      <guid>http://itsyc.xyz/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</guid>
-      <description>PlantUML 的使用依赖与 Java 环境，因此需要在系统上先安装好 Java 环境。 下载 PlantUML jar：PlantUML compiled Jar。 plantuml-mode：skuro/pla</description>
     </item>
     
     <item>

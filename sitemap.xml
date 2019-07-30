@@ -9,89 +9,9 @@
   </url>
   
   <url>
-    <loc>http://itsyc.xyz/categories/</loc>
-    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://itsyc.xyz/</loc>
-    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
+    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/post/</loc>
-    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/tags/</loc>
-    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/tags/blog/</loc>
-    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/tags/emacs/</loc>
-    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/tags/hugo/</loc>
-    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/tags/org-mode/</loc>
-    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-orgmode-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/categories/%E6%8A%98%E8%85%BE-blog/</loc>
-    <lastmod>2017-12-29T11:49:25+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/categories/living-in-emacs/</loc>
-    <lastmod>2017-06-05T10:12:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/tags/orgmode/</loc>
-    <lastmod>2017-06-05T10:12:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/tags/plantuml/</loc>
-    <lastmod>2017-06-05T10:12:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://itsyc.xyz/post/%E5%9C%A8-emacs-%E4%B8%AD%E4%BD%BF%E7%94%A8-plantuml/</loc>
-    <lastmod>2017-06-05T10:12:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
@@ -101,6 +21,16 @@
   
   <url>
     <loc>http://itsyc.xyz/archives/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://itsyc.xyz/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://itsyc.xyz/tags/</loc>
     <priority>0</priority>
   </url>
   

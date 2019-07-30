@@ -7,28 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; Copyright 2017 Yang Chuang</copyright>
-    <lastBuildDate>Fri, 29 Dec 2017 11:49:25 +0800</lastBuildDate>
     
 	<atom:link href="http://itsyc.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>折腾 Blog</title>
-      <link>http://itsyc.xyz/categories/%E6%8A%98%E8%85%BE-blog/</link>
-      <pubDate>Fri, 29 Dec 2017 11:49:25 +0800</pubDate>
-      
-      <guid>http://itsyc.xyz/categories/%E6%8A%98%E8%85%BE-blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Living in Emacs</title>
-      <link>http://itsyc.xyz/categories/living-in-emacs/</link>
-      <pubDate>Mon, 05 Jun 2017 10:12:34 +0800</pubDate>
-      
-      <guid>http://itsyc.xyz/categories/living-in-emacs/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
